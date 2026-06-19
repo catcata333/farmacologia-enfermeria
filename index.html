@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Farmacología Clínica y Farmacovigilancia</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background:#f7f8fc;
+    display:flex;
+}
+
+.sidebar{
+    width:260px;
+    min-height:100vh;
+    background:#d8c8ff;
+    padding:20px;
+    position:fixed;
+}
+
+.sidebar h2{
+    margin-bottom:20px;
+    color:#333;
+}
+
+.sidebar a{
+    display:block;
+    text-decoration:none;
+    color:#333;
+    padding:12px;
+    border-radius:10px;
+    margin-bottom:10px;
+    background:white;
+}
+
+.sidebar a:hover{
+    background:#c8f5d5;
+}
+
+.main{
+    margin-left:280px;
+    padding:30px;
+    width:100%;
+}
+
+.hero{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    margin-bottom:25px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+.hero h1{
+    color:#4b4b4b;
+    margin-bottom:10px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    padding:20px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.section{
+    background:white;
+    margin-top:30px;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+.flashcard{
+    margin-top:15px;
+    padding:20px;
+    border-radius:15px;
+    background:#e9f7ff;
+    cursor:pointer;
+    text-align:center;
+}
+
+.answer{
+    display:none;
+    margin-top:10px;
+    font-weight:bold;
+}
+
+.quiz-btn{
+    margin-top:15px;
+    padding:10px 20px;
+    border:none;
+    border-radius:10px;
+    background:#b7f0c2;
+    cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h2>💊 Farmacología</h2>
+
+<a href="#hta">🫀 Hipertensión</a>
+<a href="#dislipidemias">🩸 Dislipidemias</a>
+<a href="#coagulacion">🫁 Anticoagulantes</a>
+<a href="#diabetes">🍬 Diabetes</a>
+<a href="#dolor">💉 Dolor</a>
+
+</div>
+
+<div class="main">
+
+<div class="hero">
+
+<h1>💊 Farmacología Clínica y Farmacovigilancia</h1>
+
+<p>
+Plataforma de estudio para estudiantes de Enfermería.
+</p>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>🫀 Hipertensión</h3>
+<p>Clasificación, tratamiento y fármacos.</p>
+</div>
+
+<div class="card">
+<h3>🩸 Dislipidemias</h3>
+<p>Estatinas y otros hipolipemiantes.</p>
+</div>
+
+<div class="card">
+<h3>🫁 Anticoagulantes</h3>
+<p>Warfarina, heparinas y ACOD.</p>
+</div>
+
+<div class="card">
+<h3>🍬 Diabetes</h3>
+<p>Insulinas y antidiabéticos.</p>
+</div>
+
+<div class="card">
+<h3>💉 Dolor</h3>
+<p>AINEs, opioides y escalera OMS.</p>
+</div>
+
+</div>
+
+<section id="hta" class="section">
+
+<h2>🫀 Hipertensión Arterial</h2>
+
+<br>
+
+<h3>📖 Resumen rápido</h3>
+
+<p>
+La HTA es una enfermedad crónica caracterizada por una presión arterial ≥140/90 mmHg.
+Es el principal factor de riesgo cardiovascular modificable.
+</p>
+
+<div class="flashcard" onclick="toggleCard()">
+
+¿Qué cifra define HTA?
+
+<div id="respuesta" class="answer">
+PAS ≥ 140 mmHg y/o PAD ≥ 90 mmHg.
+</div>
+
+</div>
+
+<button class="quiz-btn" onclick="mostrarRespuesta()">
+Pregunta rápida
+</button>
+
+<p id="quiz"></p>
+
+</section>
+
+<section id="dislipidemias" class="section">
+<h2>🩸 Dislipidemias</h2>
+<p>Contenido próximamente.</p>
+</section>
+
+<section id="coagulacion" class="section">
+<h2>🫁 Anticoagulantes</h2>
+<p>Contenido próximamente.</p>
+</section>
+
+<section id="diabetes" class="section">
+<h2>🍬 Diabetes</h2>
+<p>Contenido próximamente.</p>
+</section>
+
+<section id="dolor" class="section">
+<h2>💉 Dolor</h2>
+<p>Contenido próximamente.</p>
+</section>
+
+</div>
+
+<script>
+
+function toggleCard(){
+    const respuesta=document.getElementById("respuesta");
+
+    if(respuesta.style.display==="block"){
+        respuesta.style.display="none";
+    }else{
+        respuesta.style.display="block";
+    }
+}
+
+function mostrarRespuesta(){
+    document.getElementById("quiz").innerHTML =
+    "✅ Respuesta: PAS ≥ 140 mmHg y/o PAD ≥ 90 mmHg";
+}
+
+</script>
+
+</body>
+</html>
