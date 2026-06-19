@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Farmacología Clínica - HTA</title>
+<title>Farmacología Enfermería</title>
 
 <style>
 *{
@@ -16,18 +15,17 @@
 
 body{
     display:flex;
-    background: linear-gradient(135deg,#eef4ff,#f7fbff);
+    background:#eef4ff;
     color:#333;
 }
 
 /* SIDEBAR */
 .sidebar{
-    width:270px;
+    width:260px;
     min-height:100vh;
-    background: linear-gradient(180deg,#c7b7ff,#cfe8ff);
-    padding:25px;
     position:fixed;
-    box-shadow:2px 0 10px rgba(0,0,0,0.1);
+    background:linear-gradient(180deg,#c7b7ff,#cfe8ff);
+    padding:20px;
 }
 
 .sidebar h2{
@@ -37,43 +35,43 @@ body{
 .sidebar a{
     display:block;
     text-decoration:none;
-    color:#333;
-    padding:12px;
-    border-radius:10px;
-    margin-bottom:10px;
     background:white;
+    margin-bottom:10px;
+    padding:10px;
+    border-radius:10px;
+    color:#333;
     font-weight:bold;
     transition:0.2s;
 }
 
 .sidebar a:hover{
-    background:#bff3d0;
     transform:translateX(5px);
+    background:#bff3d0;
 }
 
 /* MAIN */
 .main{
-    margin-left:280px;
-    padding:30px;
+    margin-left:270px;
+    padding:25px;
     width:100%;
 }
 
 /* HERO */
 .hero{
     background:white;
-    padding:30px;
-    border-radius:20px;
-    margin-bottom:25px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom:20px;
 }
 
-/* SECTIONS */
+/* SECTION */
 .section{
     background:white;
-    margin-top:25px;
     padding:25px;
-    border-radius:20px;
-    box-shadow:0 6px 15px rgba(0,0,0,0.08);
+    margin-bottom:20px;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
 
 h2{
@@ -84,47 +82,25 @@ h3{
     margin-top:15px;
 }
 
-/* BOXES */
+/* BOX */
 .box{
-    background:#f4f8ff;
+    background:#f6f9ff;
     padding:15px;
-    border-radius:12px;
-    margin-top:10px;
-}
-
-/* FLASHCARD */
-.flashcard{
-    margin-top:15px;
-    padding:20px;
-    border-radius:15px;
-    background: linear-gradient(135deg,#e9f7ff,#f3fff7);
-    cursor:pointer;
-    text-align:center;
-}
-
-.answer{
-    display:none;
-    margin-top:10px;
-    font-weight:bold;
-    color:#2b6cb0;
-}
-
-/* QUIZ */
-.quiz-box{
-    margin-top:15px;
-    padding:15px;
-    border-radius:12px;
-    background:#f8f9ff;
-}
-
-.quiz-btn{
-    margin-top:10px;
-    padding:10px 15px;
-    border:none;
     border-radius:10px;
-    background:#7ee2a8;
-    cursor:pointer;
-    font-weight:bold;
+    margin-top:10px;
+}
+
+/* TABLE */
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:10px;
+}
+
+th,td{
+    border:1px solid #ddd;
+    padding:8px;
+    text-align:center;
 }
 </style>
 </head>
@@ -132,153 +108,94 @@ h3{
 <body>
 
 <div class="sidebar">
-<h2>💊 HTA Pro</h2>
-
-<a href="#definicion">Definición</a>
-<a href="#clasificacion">Clasificación</a>
-<a href="#epidemiologia">Epidemiología</a>
-<a href="#complicaciones">Complicaciones</a>
-<a href="#farmacos">Fármacos</a>
-<a href="#enfermeria">Rol Enfermería</a>
+<h2>💊 Farmaco</h2>
+<a href="#hta">Hipertensión</a>
+<a href="#dislipidemias">Dislipidemias</a>
+<a href="#diabetes">Diabetes</a>
+<a href="#dolor">Dolor</a>
+<a href="#anticoagulantes">Anticoagulantes</a>
 </div>
 
 <div class="main">
 
 <div class="hero">
-<h1>🫀 Hipertensión Arterial - Guía Completa Enfermería</h1>
-<p>Basado en OMS, MINSAL y guías clínicas</p>
+<h1>💊 Farmacología Clínica - Enfermería</h1>
+<p>Plataforma de estudio integrada</p>
 </div>
 
-<!-- DEFINICION -->
-<section id="definicion" class="section">
-<h2>📖 Definición</h2>
+<!-- HTA COMPLETA -->
+<section id="hta" class="section">
+
+<h2>🫀 Hipertensión Arterial (HTA)</h2>
 
 <div class="box">
-La HTA es una enfermedad crónica no transmisible caracterizada por presión arterial ≥140/90 mmHg en mediciones repetidas.
+La HTA es una enfermedad crónica no transmisible caracterizada por PAS ≥140 mmHg y/o PAD ≥90 mmHg en mediciones repetidas.
 </div>
 
-<h3>🧠 Fisiopatología resumida</h3>
+<h3>🧠 Fisiopatología</h3>
 <div class="box">
-Interacción entre:
-<ul>
-<li>Sistema renina-angiotensina-aldosterona</li>
-<li>Sistema nervioso simpático</li>
-<li>Función renal</li>
-<li>Tono vascular</li>
-<li>Factores genéticos y ambientales</li>
-</ul>
+Interacción entre sistema renina-angiotensina-aldosterona, sistema nervioso simpático, función renal y factores ambientales.
 </div>
 
 <h3>⚠ Relevancia clínica</h3>
 <div class="box">
-Principal factor de riesgo modificable para:
-IAM, ACV, insuficiencia renal, insuficiencia cardíaca y retinopatía.
+Principal factor de riesgo cardiovascular modificable. Relacionada con IAM, ACV, insuficiencia renal y cardíaca.
 </div>
-</section>
 
-<!-- CLASIFICACION -->
-<section id="clasificacion" class="section">
-<h2>📊 Clasificación</h2>
+<h3>📊 Clasificación MINSAL</h3>
+<table>
+<tr><th>Categoría</th><th>PAS</th><th>PAD</th></tr>
+<tr><td>Normal</td><td>&lt;120</td><td>&lt;80</td></tr>
+<tr><td>Normal alta</td><td>120–139</td><td>80–89</td></tr>
+<tr><td>HTA 1</td><td>140–159</td><td>90–99</td></tr>
+<tr><td>HTA 2</td><td>160–179</td><td>100–109</td></tr>
+<tr><td>HTA 3</td><td>≥180</td><td>≥110</td></tr>
+</table>
 
+<h3>📈 Epidemiología</h3>
 <div class="box">
-<strong>MINSAL / OMS:</strong><br><br>
-Normal: &lt;120 / &lt;80<br>
-Normal alta: 120–139 / 80–89<br>
-HTA 1: 140–159 / 90–99<br>
-HTA 2: 160–179 / 100–109<br>
-HTA 3: ≥180 / ≥110
+Chile: 27,6% prevalencia. Alta carga cardiovascular y subdiagnóstico frecuente.
 </div>
 
+<h3>⚠ Complicaciones</h3>
 <div class="box">
-<strong>ESC:</strong><br><br>
-Óptima: &lt;120 / &lt;80<br>
-Normal: 120–129 / 80–84<br>
-Normal alta: 130–139 / 85–89<br>
-HTA: ≥140 / ≥90
+IAM, ACV, insuficiencia renal, retinopatía hipertensiva.
 </div>
-</section>
 
-<!-- EPIDEMIOLOGIA -->
-<section id="epidemiologia" class="section">
-<h2>📈 Epidemiología</h2>
-
+<h3>💊 Tratamiento</h3>
 <div class="box">
-Mundo: >1.280 millones de personas con HTA.<br><br>
-Chile: 27,6% de prevalencia (ENS 2017).<br><br>
-Problemas:
-<ul>
-<li>Subdiagnóstico</li>
-<li>Baja adherencia</li>
-<li>Mal control</li>
-</ul>
+IECA (enalapril), ARA II (losartán), BCC (amlodipino), diuréticos, betabloqueadores.
 </div>
-</section>
 
-<!-- COMPLICACIONES -->
-<section id="complicaciones" class="section">
-<h2>⚠ Complicaciones</h2>
-
+<h3>🩺 Rol de enfermería</h3>
 <div class="box">
-<strong>Cardíacas:</strong> IAM, HVI, IC<br>
-<strong>Cerebro:</strong> ACV, demencia vascular<br>
-<strong>Renal:</strong> ERC<br>
-<strong>Ocular:</strong> retinopatía
-</div>
-</section>
-
-<!-- FARMACOS -->
-<section id="farmacos" class="section">
-<h2>💊 Tratamiento farmacológico</h2>
-
-<div class="box">
-<strong>IECA:</strong> enalapril (tos seca)<br>
-<strong>ARA II:</strong> losartán<br>
-<strong>BCC:</strong> amlodipino (edema)<br>
-<strong>Diuréticos:</strong> hidroclorotiazida (hipokalemia)<br>
-<strong>Betabloqueadores:</strong> metoprolol (bradicardia)
-</div>
-</section>
-
-<!-- ENFERMERIA -->
-<section id="enfermeria" class="section">
-<h2>🩺 Rol de Enfermería</h2>
-
-<div class="box">
-• Control de presión arterial correcto<br>
-• Educación en estilo de vida (DASH, ejercicio, sal)<br>
-• Promoción de adherencia terapéutica<br>
-• Detección de efectos adversos<br>
-• Prevención de complicaciones
-</div>
-
-<h3>🎴 Flashcard</h3>
-
-<div class="flashcard" onclick="toggleCard()">
-¿Qué define HTA?
-
-<div id="answer" class="answer">
-PAS ≥140 mmHg y/o PAD ≥90 mmHg
-</div>
-</div>
-
-<h3>📝 Quiz</h3>
-
-<div class="quiz-box">
-<p>¿Cuál es un ARA II?</p>
-
-<button class="quiz-btn" onclick="alert('Losartán ✔')">Ver respuesta</button>
+Control de PA, educación, adherencia, detección de complicaciones.
 </div>
 
 </section>
 
-</div>
+<!-- OTROS TEMAS -->
+<section id="dislipidemias" class="section">
+<h2>🩸 Dislipidemias</h2>
+<p>Contenido en desarrollo.</p>
+</section>
 
-<script>
-function toggleCard(){
-    const a = document.getElementById("answer");
-    a.style.display = a.style.display === "block" ? "none" : "block";
-}
-</script>
+<section id="diabetes" class="section">
+<h2>🍬 Diabetes</h2>
+<p>Contenido en desarrollo.</p>
+</section>
+
+<section id="dolor" class="section">
+<h2>💉 Dolor</h2>
+<p>Contenido en desarrollo.</p>
+</section>
+
+<section id="anticoagulantes" class="section">
+<h2>🫁 Anticoagulantes</h2>
+<p>Contenido en desarrollo.</p>
+</section>
+
+</div>
 
 </body>
 </html>
