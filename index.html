@@ -3,89 +3,91 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Farmacología HTA Pro</title>
+<title>Farmacología Clínica y Farmacovigilancia</title>
 
 <style>
 body{
     margin:0;
     font-family: Arial;
-    background:#f4f6fb;
+    background:#f5f7fb;
     display:flex;
 }
 
-/* SIDEBAR */
+/* SIDEBAR CLÍNICO */
 .sidebar{
-    width:260px;
+    width:270px;
     height:100vh;
     position:fixed;
     background:#ffffff;
-    border-right:1px solid #ddd;
+    border-right:1px solid #e6e6e6;
     padding:20px;
 }
 
 .sidebar h2{
-    font-size:18px;
+    font-size:16px;
     margin-bottom:15px;
+    color:#2b2b2b;
 }
 
 .sidebar a{
     display:block;
     padding:10px;
-    margin-bottom:8px;
+    margin-bottom:6px;
     text-decoration:none;
     color:#333;
     border-radius:8px;
+    font-size:14px;
 }
 
 .sidebar a:hover{
-    background:#e9f0ff;
+    background:#eef3ff;
 }
 
 /* MAIN */
 .main{
-    margin-left:260px;
+    margin-left:270px;
     padding:25px;
-    width:100%;
 }
 
-/* CARD STYLE NOTION */
-.card{
+/* HEADER */
+.header{
     background:white;
     padding:20px;
-    margin-bottom:20px;
     border-radius:12px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+    border:1px solid #eaeaea;
+    margin-bottom:20px;
 }
 
-/* FLASHCARD */
-.flashcard{
-    background:#eef6ff;
+.header h1{
+    margin:0;
+    font-size:20px;
+}
+
+/* BLOQUES TIPO SISTEMA */
+.card{
+    background:white;
+    padding:18px;
+    border-radius:12px;
+    border:1px solid #eaeaea;
+    margin-bottom:15px;
+}
+
+/* GRID DASHBOARD */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:12px;
+}
+
+.module{
+    background:white;
     padding:15px;
-    border-radius:10px;
-    cursor:pointer;
-    margin-top:10px;
+    border-radius:12px;
+    border:1px solid #eaeaea;
 }
 
-.answer{
-    display:none;
-    margin-top:10px;
-    font-weight:bold;
-}
-
-/* QUIZ */
-.quiz{
-    background:#fff7e6;
-    padding:15px;
-    border-radius:10px;
-    margin-top:10px;
-}
-button{
-    margin-top:10px;
-    padding:8px 12px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    background:#d0e2ff;
+.module:hover{
+    box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
 </style>
 </head>
@@ -93,194 +95,77 @@ button{
 <body>
 
 <div class="sidebar">
-<h2>💊 HTA PRO</h2>
-<a href="#cap1">Cap 1</a>
-<a href="#cap2">Cap 2</a>
-<a href="#cap3">Cap 3</a>
-<a href="#cap4">Cap 4</a>
-<a href="#cap5">Cap 5</a>
-<a href="#cap6">Cap 6</a>
-<a href="#cap7">Cap 7</a>
-<a href="#cap8">Cap 8</a>
-<a href="#cap9">Cap 9</a>
-<a href="#cap10">Cap 10</a>
-<a href="#cap11">Cap 11</a>
-<a href="#cap12">Cap 12</a>
-<a href="#flash">Flashcards</a>
-<a href="#quiz">Quiz</a>
+<h2>💊 Farmacología Clínica</h2>
+<a href="#dashboard">Dashboard</a>
+<a href="#hta">HTA</a>
+<a href="#dislipidemias">Dislipidemias</a>
+<a href="#diabetes">Diabetes</a>
+<a href="#dolor">Dolor</a>
+<a href="#anticoagulantes">Anticoagulantes</a>
 </div>
 
 <div class="main">
 
-<div class="card">
-<h1>🫀 Hipertensión Arterial - Guía Completa Enfermería</h1>
-<p>Plataforma de estudio completa basada en tu texto original sin omitir contenido.</p>
+<div class="header">
+<h1>💊 Farmacología Clínica y Farmacovigilancia</h1>
+<p>Sistema de estudio tipo plataforma clínica</p>
 </div>
 
-<!-- CAP 1 -->
-<div class="card" id="cap1">
-<h2>Capítulo 1: Definición y relevancia clínica</h2>
+<!-- DASHBOARD -->
+<div id="dashboard" class="card">
+<h2>📊 Dashboard Clínico</h2>
 
-<p>La hipertensión arterial (HTA) es una enfermedad crónica no transmisible caracterizada por el aumento sostenido de la presión arterial sistólica y/o diastólica ≥140/90 mmHg...</p>
-
-<p>Fisiopatología: sistema renina-angiotensina-aldosterona, sistema simpático, función renal...</p>
-
-<p>Complicaciones: IAM, ACV, insuficiencia renal, insuficiencia cardíaca, retinopatía...</p>
-
-<p>Rol enfermería: detección precoz, educación, adherencia, monitoreo.</p>
+<div class="grid">
+<div class="module">🫀 HTA</div>
+<div class="module">🩸 Dislipidemias</div>
+<div class="module">🍬 Diabetes</div>
+<div class="module">💉 Dolor</div>
+<div class="module">🫁 Anticoagulantes</div>
+</div>
 </div>
 
-<!-- CAP 2 -->
-<div class="card" id="cap2">
-<h2>Capítulo 2: Clasificación</h2>
+<!-- HTA COMPLETA -->
+<div id="hta" class="card">
+<h2>🫀 Hipertensión Arterial (HTA)</h2>
 
-<p>MINSAL:</p>
-<p>Normal <120/80 | Normal alta 120–139/80–89 | HTA 1 140–159/90–99 | HTA 2 160–179/100–109 | HTA 3 ≥180/≥110</p>
+<p><b>Definición:</b> PAS ≥140 y/o PAD ≥90 mmHg en mediciones repetidas.</p>
 
-<p>ESC: incluye óptima, normal, normal alta, HTA grados 1–3</p>
-</div>
+<p><b>Fisiopatología:</b> sistema renina-angiotensina-aldosterona, sistema simpático, función renal.</p>
 
-<!-- CAP 3 -->
-<div class="card" id="cap3">
-<h2>Capítulo 3: Epidemiología</h2>
-<p>1.280 millones en el mundo. Chile 27,6%. Subdiagnóstico y baja adherencia.</p>
-</div>
+<p><b>Relevancia clínica:</b> principal factor de riesgo cardiovascular modificable.</p>
 
-<!-- CAP 4 -->
-<div class="card" id="cap4">
-<h2>Capítulo 4: Complicaciones</h2>
-<p>Cardíacas, cerebrovasculares, renales y oculares.</p>
-</div>
+<p><b>Complicaciones:</b> IAM, ACV, insuficiencia renal, retinopatía.</p>
 
-<!-- CAP 5 -->
-<div class="card" id="cap5">
-<h2>Capítulo 5: Beneficios del tratamiento</h2>
-<p>Reducción de IAM, ACV, insuficiencia cardíaca y mortalidad total.</p>
-</div>
+<p><b>Clasificación:</b> MINSAL y ESC (ver tablas clínicas).</p>
 
-<!-- CAP 6 -->
-<div class="card" id="cap6">
-<h2>Capítulo 6: Objetivos terapéuticos</h2>
-<p>Meta general <140/90. En alto riesgo <130/80.</p>
-</div>
+<p><b>Tratamiento:</b> IECA, ARA II, BCC, diuréticos, betabloqueadores.</p>
 
-<!-- CAP 7 -->
-<div class="card" id="cap7">
-<h2>Capítulo 7: Tratamiento no farmacológico</h2>
-<p>Dieta DASH, ejercicio, reducción sal, alcohol, tabaco, estrés.</p>
-</div>
-
-<!-- CAP 8 -->
-<div class="card" id="cap8">
-<h2>Capítulo 8: Tratamiento farmacológico</h2>
-<p>IECA, ARA II, BCC, diuréticos, betabloqueadores, otros.</p>
-</div>
-
-<!-- CAP 9 -->
-<div class="card" id="cap9">
-<h2>Capítulo 9: Elección terapéutica</h2>
-<p>Individualización según edad, comorbilidades, embarazo, riesgo.</p>
-</div>
-
-<!-- CAP 10 -->
-<div class="card" id="cap10">
-<h2>Capítulo 10: Casos especiales</h2>
-<p>HTA en diabetes, embarazo, ERC, adultos mayores.</p>
-</div>
-
-<!-- CAP 11 -->
-<div class="card" id="cap11">
-<h2>Capítulo 11: Crisis hipertensivas</h2>
-<p>Urgencia vs emergencia hipertensiva, manejo IV y oral.</p>
-</div>
-
-<!-- CAP 12 -->
-<div class="card" id="cap12">
-<h2>Capítulo 12: Interacciones farmacológicas</h2>
-<p>AINEs, corticoides, descongestionantes, antidepresivos, inmunosupresores.</p>
-</div>
-
-<!-- FLASHCARDS -->
-<div class="card" id="flash">
-<h2>🎴 Flashcards (10)</h2>
-
-<div class="flashcard" onclick="toggle(this)">HTA definición<div class="answer">≥140/90 mmHg</div></div>
-<div class="flashcard" onclick="toggle(this)">IECA ejemplo<div class="answer">Enalapril</div></div>
-<div class="flashcard" onclick="toggle(this)">ARA II ejemplo<div class="answer">Losartán</div></div>
-<div class="flashcard" onclick="toggle(this)">BCC ejemplo<div class="answer">Amlodipino</div></div>
-<div class="flashcard" onclick="toggle(this)">Diurético<div class="answer">Hidroclorotiazida</div></div>
-<div class="flashcard" onclick="toggle(this)">Complicación</div><div class="answer">IAM</div>
-<div class="flashcard" onclick="toggle(this)">Meta general<div class="answer"><140/90</div></div>
-<div class="flashcard" onclick="toggle(this)">Dieta</div><div class="answer">DASH</div>
-<div class="flashcard" onclick="toggle(this)">Emergencia HTA</div><div class="answer">Daño órgano blanco</div>
-<div class="flashcard" onclick="toggle(this)">Fármaco embarazo</div><div class="answer">Metildopa</div>
+<p><b>Rol enfermería:</b> control, educación, adherencia, seguimiento.</p>
 
 </div>
 
-<!-- QUIZ -->
-<div class="card" id="quiz">
-<h2>📝 Quiz (10 preguntas)</h2>
-
-<div class="quiz">
-<p>1. HTA se define como:</p>
-<button onclick="alert('≥140/90')">Ver respuesta</button>
+<!-- OTROS -->
+<div id="dislipidemias" class="card">
+<h2>🩸 Dislipidemias</h2>
+<p>Contenido en desarrollo...</p>
 </div>
 
-<div class="quiz">
-<p>2. IECA ejemplo:</p>
-<button onclick="alert('Enalapril')">Ver respuesta</button>
+<div id="diabetes" class="card">
+<h2>🍬 Diabetes</h2>
+<p>Contenido en desarrollo...</p>
 </div>
 
-<div class="quiz">
-<p>3. ARA II ejemplo:</p>
-<button onclick="alert('Losartán')">Ver respuesta</button>
+<div id="dolor" class="card">
+<h2>💉 Dolor</h2>
+<p>Contenido en desarrollo...</p>
 </div>
 
-<div class="quiz">
-<p>4. Complicación HTA:</p>
-<button onclick="alert('ACV')">Ver respuesta</button>
-</div>
-
-<div class="quiz">
-<p>5. Meta general:</p>
-<button onclick="alert('<140/90')">Ver respuesta</button>
-</div>
-
-<div class="quiz">
-<p>6. Dieta recomendada:</p>
-<button onclick="alert('DASH')">Ver respuesta</button>
-</div>
-
-<div class="quiz">
-<p>7. BCC ejemplo:</p>
-<button onclick="alert('Amlodipino')">Ver respuesta</button>
-</div>
-
-<div class="quiz">
-<p>8. Diurético:</p>
-<button onclick="alert('Hidroclorotiazida')">Ver respuesta</button>
-</div>
-
-<div class="quiz">
-<p>9. Emergencia HTA:</p>
-<button onclick="alert('Daño órgano blanco')">Ver respuesta</button>
-</div>
-
-<div class="quiz">
-<p>10. Fármaco embarazo:</p>
-<button onclick="alert('Metildopa')">Ver respuesta</button>
+<div id="anticoagulantes" class="card">
+<h2>🫁 Anticoagulantes</h2>
+<p>Contenido en desarrollo...</p>
 </div>
 
 </div>
-
-</div>
-
-<script>
-function toggle(el){
-    let ans = el.querySelector(".answer");
-    ans.style.display = ans.style.display === "block" ? "none" : "block";
-}
-</script>
 
 </body>
 </html>
