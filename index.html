@@ -16,15 +16,20 @@
 }
 
 body{
-    background:#f7f8fc;
+    background:#eef4ff;
     display:flex;
 }
 
 .sidebar{
-    width:260px;
+    width:270px;
     min-height:100vh;
-    background:#d8c8ff;
-    padding:20px;
+    background:linear-gradient(
+    180deg,
+    #d7c7ff,
+    #cfe8ff
+    );
+
+    padding:25px;
     position:fixed;
 }
 
@@ -75,8 +80,13 @@ body{
 .card{
     background:white;
     border-radius:20px;
-    padding:20px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    padding:25px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
 }
 
 .card h3{
@@ -139,11 +149,22 @@ body{
 <h1>💊 Farmacología Clínica y Farmacovigilancia</h1>
 
 <p>
-Plataforma de estudio para estudiantes de Enfermería.
+Plataforma interactiva de estudio para Enfermería.
+</p>
+
+<br>
+
+<p>
+📚 Hipertensión • Dislipidemias • Anticoagulantes • Diabetes • Dolor
+</p>
+
+<br>
+
+<p>
+🎯 Enfocada en farmacología clínica, farmacovigilancia y preparación de evaluaciones.
 </p>
 
 </div>
-
 <div class="cards">
 
 <div class="card">
@@ -179,28 +200,165 @@ Plataforma de estudio para estudiantes de Enfermería.
 
 <br>
 
-<h3>📖 Resumen rápido</h3>
+<h3>📖 Definición</h3>
 
 <p>
-La HTA es una enfermedad crónica caracterizada por una presión arterial ≥140/90 mmHg.
-Es el principal factor de riesgo cardiovascular modificable.
+La hipertensión arterial es una enfermedad crónica caracterizada por una presión arterial sistólica ≥ 140 mmHg y/o una presión arterial diastólica ≥ 90 mmHg.
 </p>
+
+<br>
+
+<h3>⭐ ¿Por qué es importante?</h3>
+
+<ul>
+
+<li>Principal factor de riesgo cardiovascular modificable.</li>
+
+<li>Aumenta el riesgo de IAM.</li>
+
+<li>Aumenta el riesgo de ACV.</li>
+
+<li>Favorece insuficiencia renal.</li>
+
+<li>Puede causar insuficiencia cardíaca.</li>
+
+</ul>
+
+<br>
+
+<h3>📊 Clasificación</h3>
+
+<table border="1" style="width:100%;border-collapse:collapse;text-align:center">
+
+<tr>
+<th>Categoría</th>
+<th>PAS</th>
+<th>PAD</th>
+</tr>
+
+<tr>
+<td>Normal</td>
+<td><120</td>
+<td><80</td>
+</tr>
+
+<tr>
+<td>Normal Alta</td>
+<td>120-139</td>
+<td>80-89</td>
+</tr>
+
+<tr>
+<td>HTA Grado 1</td>
+<td>140-159</td>
+<td>90-99</td>
+</tr>
+
+<tr>
+<td>HTA Grado 2</td>
+<td>160-179</td>
+<td>100-109</td>
+</tr>
+
+<tr>
+<td>HTA Grado 3</td>
+<td>≥180</td>
+<td>≥110</td>
+</tr>
+
+</table>
+
+<br>
+
+<h3>💊 Fármacos más preguntados</h3>
+
+<table border="1" style="width:100%;border-collapse:collapse">
+
+<tr>
+<th>Grupo</th>
+<th>Ejemplo</th>
+<th>RAM importante</th>
+</tr>
+
+<tr>
+<td>IECA</td>
+<td>Enalapril</td>
+<td>Tos seca</td>
+</tr>
+
+<tr>
+<td>ARA II</td>
+<td>Losartán</td>
+<td>Mareo</td>
+</tr>
+
+<tr>
+<td>BCC</td>
+<td>Amlodipino</td>
+<td>Edema periférico</td>
+</tr>
+
+<tr>
+<td>Betabloqueadores</td>
+<td>Metoprolol</td>
+<td>Bradicardia</td>
+</tr>
+
+<tr>
+<td>Diuréticos</td>
+<td>Hidroclorotiazida</td>
+<td>Hipopotasemia</td>
+</tr>
+
+</table>
+
+<br>
+
+<h3>🎴 Flashcard</h3>
 
 <div class="flashcard" onclick="toggleCard()">
 
-¿Qué cifra define HTA?
+¿Qué valor define HTA?
 
 <div id="respuesta" class="answer">
+
 PAS ≥ 140 mmHg y/o PAD ≥ 90 mmHg.
+
 </div>
 
 </div>
+
+<br>
+
+<h3>📝 Mini Quiz</h3>
 
 <button class="quiz-btn" onclick="mostrarRespuesta()">
-Pregunta rápida
+
+Mostrar respuesta
+
 </button>
 
 <p id="quiz"></p>
+
+<br>
+
+<h3>⚡ Resumen Ultra Rápido</h3>
+
+<ul>
+
+<li>HTA = ≥140/90 mmHg.</li>
+
+<li>Principal factor de riesgo cardiovascular.</li>
+
+<li>IECA → Enalapril → Tos.</li>
+
+<li>ARA II → Losartán.</li>
+
+<li>BCC → Amlodipino.</li>
+
+<li>Diurético → Hidroclorotiazida.</li>
+
+</ul>
 
 </section>
 
