@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2 - Farmacología de la Dislipidemia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .header-modulo {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .header-modulo h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+
+        .header-modulo .numero {
+            font-size: 4em;
+            opacity: 0.3;
+            margin-bottom: 10px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .content-section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-section h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.6em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .content-section h3 {
+            color: #764ba2;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .content-section h4 {
+            color: #555;
+            margin-top: 15px;
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+
+        .content-section p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .content-section ul, .content-section ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .content-section li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .tabla {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95em;
+        }
+
+        .tabla th {
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .tabla td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .tabla tr:hover {
+            background: #f9f9f9;
+        }
+
+        .btn-volver {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .btn-volver:hover {
+            background: #764ba2;
+            transform: scale(1.05);
+        }
+
+        .box-importante {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .box-importante strong {
+            color: #856404;
+        }
+
+        .box-clinica {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .box-clinica strong {
+            color: #0c5460;
+        }
+
+        .subtitulo {
+            font-weight: 600;
+            color: #667eea;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .header-modulo h1 {
+                font-size: 1.8em;
+            }
+
+            .container {
+                padding: 20px 10px;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+
+            .tabla {
+                font-size: 0.85em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-modulo">
+        <div class="numero">02</div>
+        <h1>Farmacología de la Dislipidemia</h1>
+    </div>
+
+    <div class="container">
+        <div class="content-section">
+            <h2>Concepto y Fisiología del Metabolismo de Lípidos</h2>
+            
+            <h3>Transporte de Lípidos</h3>
+            <p>Los lípidos (colesterol y triglicéridos) no se disuelven libremente en el plasma, por lo que su transporte se realiza mediante lipoproteínas, complejos esféricos de lípidos y proteínas que circulan por el torrente sanguíneo. Estas se clasifican por su densidad y función:</p>
+            
+            <ul>
+                <li><strong>Quilomicrones:</strong> Transportan triglicéridos desde el intestino a tejidos periféricos</li>
+                <li><strong>VLDL (Very Low-Density Lipoprotein):</strong> Producidas por el hígado, transportan triglicéridos endógenos</li>
+                <li><strong>IDL y LDL (Low-Density Lipoprotein):</strong> Derivadas del metabolismo de VLDL. LDL lleva colesterol a tejidos; su acumulación favorece la aterosclerosis</li>
+                <li><strong>HDL (High-Density Lipoprotein):</strong> Participa en el transporte reverso de colesterol al hígado, ejerciendo un rol protector</li>
+            </ul>
+
+            <h3>Regulación del Metabolismo Lipídico</h3>
+            <p>Se regula mediante enzimas como lipoproteína lipasa (LPL) y proteína transferidora de ésteres de colesterol (CETP), junto con receptores hepáticos. Alteraciones en estas rutas dan origen a dislipidemias.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Definición y Clasificación de Dislipidemias</h2>
+            
+            <p>Las dislipidemias son alteraciones en la concentración o composición de los lípidos plasmáticos (colesterol total, LDL, HDL y triglicéridos), y son un factor de riesgo clave para enfermedad cardiovascular.</p>
+
+            <h3>Dislipidemias Primarias (Genéticas)</h3>
+            <p>De origen hereditario, como la hipercolesterolemia familiar, asociadas a mutaciones en genes reguladores del metabolismo lipídico.</p>
+
+            <h3>Dislipidemias Secundarias</h3>
+            <p>Asociadas a condiciones clínicas o fármacos:</p>
+            <ul>
+                <li>Diabetes mellitus</li>
+                <li>Hipotiroidismo</li>
+                <li>Enfermedad renal crónica</li>
+                <li>Síndrome nefrótico</li>
+                <li>Alcoholismo crónico</li>
+                <li>Corticoides, estrógenos, betabloqueadores no selectivos</li>
+            </ul>
+
+            <h3>Patrones Dislipidémicos Frecuentes</h3>
+            <ul>
+                <li><strong>Hipercolesterolemia aislada:</strong> ↑ LDL</li>
+                <li><strong>Hipertrigliceridemia:</strong> ↑ TG</li>
+                <li><strong>Dislipidemia mixta:</strong> ↑ LDL + ↑ TG</li>
+                <li><strong>Dislipidemia aterogénica:</strong> ↑ LDL, ↑ TG, ↓ HDL</li>
+            </ul>
+
+            <div class="box-clinica">
+                <strong>Nota clínica:</strong> El perfil lipídico debe realizarse idealmente con ayuno de 12 horas. Su interpretación exige contextualizar factores de riesgo, edad y comorbilidades.
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Epidemiología</h2>
+            
+            <p>Las dislipidemias afectan a una proporción importante de la población mundial. Según la OMS, más del 39% de los adultos mayores de 25 años tiene colesterol elevado.</p>
+            
+            <p><strong>En Chile:</strong> La Encuesta Nacional de Salud 2017 reportó una prevalencia de 39,8% de colesterol total elevado. Sin embargo, menos del 35% de los afectados conoce su diagnóstico, y menos aún está en tratamiento o alcanza metas terapéuticas.</p>
+
+            <h3>Principales Factores Asociados</h3>
+            <ul>
+                <li>Dieta rica en grasas saturadas, trans y azúcares simples</li>
+                <li>Sedentarismo</li>
+                <li>Obesidad abdominal</li>
+                <li>Tabaquismo</li>
+            </ul>
+
+            <p>Dado su carácter asintomático, la detección precoz es clave para prevenir eventos cardiovasculares.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Objetivos Terapéuticos y Tamizaje</h2>
+            
+            <h3>Metas de LDL-Colesterol por Riesgo Cardiovascular</h3>
+            <p>Los niveles de LDL-colesterol son el blanco principal en el manejo de dislipidemias:</p>
+            
+            <ul>
+                <li><strong>Riesgo bajo:</strong> LDL &lt; 130 mg/dL</li>
+                <li><strong>Riesgo moderado:</strong> LDL &lt; 100 mg/dL</li>
+                <li><strong>Riesgo alto (diabetes, HTA, antecedentes familiares):</strong> LDL &lt; 70 mg/dL</li>
+                <li><strong>Riesgo muy alto (enfermedad CV establecida):</strong> LDL &lt; 55 mg/dL</li>
+            </ul>
+
+            <h3>Otros Parámetros Deseables</h3>
+            <ul>
+                <li><strong>HDL:</strong> &gt; 40 mg/dL (hombres), &gt; 50 mg/dL (mujeres)</li>
+                <li><strong>Triglicéridos:</strong> &lt; 150 mg/dL; si &gt; 500 mg/dL, riesgo de pancreatitis</li>
+            </ul>
+
+            <h3>Estrategia de Tamizaje</h3>
+            
+            <h4>Indicaciones para Tamizaje</h4>
+            <ul>
+                <li>Adultos ≥ 40 años</li>
+                <li>Diabéticos, hipertensos, obesos, fumadores</li>
+                <li>Antecedentes familiares de dislipidemia o eventos CV precoces</li>
+            </ul>
+
+            <h4>Frecuencia</h4>
+            <ul>
+                <li>Cada 5 años sin factores de riesgo</li>
+                <li>Cada 6-12 meses si hay diagnóstico o tratamiento</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Estrategias Terapéuticas Integradas</h2>
+            
+            <h3>Medidas No Farmacológicas (Primera Línea)</h3>
+            
+            <h4>Alimentación Saludable</h4>
+            <ul>
+                <li>Disminuir grasas saturadas y trans</li>
+                <li>Aumentar omega 3, fibra soluble y vegetales</li>
+                <li>Limitar azúcares simples y alcohol</li>
+            </ul>
+
+            <h4>Actividad Física</h4>
+            <ul>
+                <li>≥150 minutos/semana de ejercicio aeróbico</li>
+                <li>Mejora HDL y reduce LDL y TG</li>
+            </ul>
+
+            <h4>Pérdida de Peso</h4>
+            <p>Pérdida de 5-10% del peso corporal mejora todos los parámetros lipídicos.</p>
+
+            <h4>Evitar Tabaco</h4>
+            <p>Reduce el riesgo cardiovascular y mejora el perfil lipídico.</p>
+
+            <h3>Introducción al Tratamiento Farmacológico</h3>
+            <p>Cuando las metas terapéuticas no se alcanzan solo con medidas no farmacológicas, o el riesgo cardiovascular es moderado o alto, se indican fármacos hipolipemiantes.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Fármacos Hipolipemiantes</h2>
+            
+            <h3>1. ESTATINAS (Inhibidores de HMG-CoA Reductasa)</h3>
+            
+            <p><span class="subtitulo">Mecanismo de acción:</span> Inhiben la enzima HMG-CoA reductasa, bloqueando la síntesis hepática de colesterol. Esto aumenta la expresión de receptores de LDL en el hígado, favoreciendo su depuración plasmática.</p>
+            
+            <p><span class="subtitulo">Indicaciones y beneficios clínicos:</span> Utilizadas como primera línea en todas las categorías de riesgo cardiovascular. Reducen colesterol total (CT) entre 25–45%, LDL entre 20–60%, triglicéridos (~10%) y elevan HDL (~5–10%). Disminuyen significativamente eventos cardiovasculares mayores, mortalidad por infarto y necesidad de revascularización.</p>
+            
+            <p><span class="subtitulo">Propiedades pleiotrópicas:</span> Además de reducir lípidos, las estatinas presentan múltiples efectos beneficiosos independientes:</p>
+            <ul>
+                <li><strong>Efecto antiinflamatorio:</strong> Reducción de PCR y citoquinas proinflamatorias</li>
+                <li><strong>Estabilización de placa ateromatosa:</strong> Fortalecen la cápsula fibrosa de la placa, previniendo ruptura</li>
+                <li><strong>Mejora de la función endotelial:</strong> Aumento de óxido nítrico y reducción de estrés oxidativo</li>
+                <li><strong>Efecto antitrombótico:</strong> Reducción de actividad plaquetaria</li>
+            </ul>
+            
+            <p><span class="subtitulo">Fármacos disponibles:</span> Atorvastatina, Rosuvastatina, Simvastatina</p>
+            
+            <p><span class="subtitulo">Efectos adversos:</span> Mialgias, elevación de transaminasas, rabdomiólisis (rara). Requiere vigilancia de función hepática. Precaución en combinación con fibratos o inhibidores de CYP3A4. Contraindicadas en embarazo.</p>
+
+            <h3>2. EZETIMIBE</h3>
+            
+            <p><span class="subtitulo">Mecanismo de acción:</span> Actúa sobre la proteína NPC1L1 en el intestino delgado, inhibiendo la absorción del colesterol dietético y biliar, reduciendo el colesterol que llega al hígado y aumentando la expresión de receptores de LDL.</p>
+            
+            <p><span class="subtitulo">Indicaciones y beneficios:</span> Indicado como terapia adyuvante a estatinas cuando no se logran objetivos de LDL con monoterapia, o como alternativa en pacientes con intolerancia a estatinas. Reduce los niveles de LDL entre 15–20%. En el estudio IMPROVE-IT se evidenció que su uso conjunto con simvastatina reduce significativamente eventos cardiovasculares en prevención secundaria.</p>
+            
+            <p><span class="subtitulo">Efectos adversos:</span> Perfil de seguridad favorable. Puede causar diarrea, dolor abdominal leve. No requiere ajuste de dosis en insuficiencia renal leve o moderada. Bien tolerado.</p>
+
+            <h3>3. FIBRATOS</h3>
+            
+            <p><span class="subtitulo">Mecanismo de acción:</span> Son agonistas del receptor nuclear PPAR-α, regulando genes involucrados en el metabolismo de lípidos, promoviendo:</p>
+            <ul>
+                <li>Mayor oxidación de ácidos grasos</li>
+                <li>Disminución de la síntesis hepática de VLDL</li>
+                <li>Aumento de la actividad de lipoproteína lipasa (LPL)</li>
+            </ul>
+            
+            <p><span class="subtitulo">Indicaciones y beneficios:</span> Indicados en pacientes con hipertrigliceridemia severa (&gt; 500 mg/dL) para reducir el riesgo de pancreatitis. También se utilizan en dislipidemias mixtas. Disminuyen triglicéridos entre 30–50%, aumentan HDL entre 10–20%, y pueden reducir colesterol total entre 10–20%.</p>
+            
+            <p><span class="subtitulo">Fármacos disponibles:</span></p>
+            <ul>
+                <li><strong>Fenofibrato:</strong> Compatible con estatinas, menor riesgo de miopatía</li>
+                <li><strong>Gemfibrozilo:</strong> Potente reductor de triglicéridos, pero inhibe glucuronidación hepática. MINSAL contraindica su uso combinado con estatinas</li>
+                <li><strong>Ciprofibrato:</strong> Similar al fenofibrato pero también inhibe glucuronidación</li>
+            </ul>
+            
+            <p><span class="subtitulo">Efectos adversos:</span> Dispepsia, elevación de creatinina sérica, riesgo de litiasis biliar. Mayor riesgo de miopatía si se combinan con estatinas. Evaluar función renal antes de iniciar.</p>
+
+            <h3>4. RESINAS DE INTERCAMBIO IÓNICO</h3>
+            
+            <p><span class="subtitulo">Ejemplo:</span> Colestiramina</p>
+            
+            <p><span class="subtitulo">Mecanismo de acción:</span> Se unen a los ácidos biliares en el intestino e impiden su reabsorción, inducing mayor uso de colesterol hepático para sintetizar nuevas sales biliares.</p>
+            
+            <p><span class="subtitulo">Indicaciones y beneficios:</span> Indicadas en hipercolesterolemia leve a moderada, especialmente útiles en pacientes pediátricos y mujeres embarazadas. Reducen colesterol total entre 10–20% y LDL entre 15–25%.</p>
+            
+            <p><span class="subtitulo">Efectos adversos:</span> Estreñimiento, distensión abdominal, náuseas. Pueden interferir con la absorción de otros medicamentos. Administrar con intervalo de 1 a 4 horas respecto a otros fármacos.</p>
+
+            <h3>5. INHIBIDORES DE PCSK9</h3>
+            
+            <p><span class="subtitulo">Ejemplos:</span> Evolocumab, Alirocumab</p>
+            
+            <p><span class="subtitulo">Mecanismo de acción:</span> Son anticuerpos monoclonales que bloquean PCSK9 (proprotein convertasa subtilisina/kexina tipo 9), aumentando significativamente la disponibilidad de receptores de LDL funcionales y la captación hepática de colesterol LDL.</p>
+            
+            <p><span class="subtitulo">Indicaciones y beneficios:</span> Indicados en pacientes con hipercolesterolemia familiar o enfermedad cardiovascular aterosclerótica establecida que no alcanzan metas a pesar de terapia intensiva con estatinas y ezetimibe. Reducen LDL en 50–60% adicional. Estudios FOURIER y ODYSSEY OUTCOMES demostraron reducción significativa en eventos cardiovasculares mayores.</p>
+            
+            <p><span class="subtitulo">Efectos adversos:</span> Generalmente bien tolerados. Reacciones locales en sitio de inyección. No afectan función hepática ni renal. Alto costo limita accesibilidad. Administración subcutánea cada 2 o 4 semanas.</p>
+
+            <h3>6. ÁCIDOS GRASOS OMEGA 3 (EPA/DHA)</h3>
+            
+            <p><span class="subtitulo">Mecanismo de acción:</span> Modulan la síntesis hepática de triglicéridos y aumentan su degradación.</p>
+            
+            <p><span class="subtitulo">Indicaciones y beneficios:</span> Indicados principalmente en hipertrigliceridemia severa (&gt; 500 mg/dL). Pueden reducir triglicéridos entre 20–45%. EPA puro (icosapent etilo) ha demostrado reducir eventos cardiovasculares mayores en pacientes de alto riesgo.</p>
+            
+            <p><span class="subtitulo">Efectos adversos:</span> Molestias gastrointestinales, eructos, sabor a pescado. En dosis altas (&gt;3 g/día), pueden aumentar riesgo de sangrado con anticoagulantes.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Tabla Comparativa de Hipolipemiantes</h2>
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>Fármaco/Clase</th>
+                        <th>Efecto LDL</th>
+                        <th>Efecto TG</th>
+                        <th>Efecto HDL</th>
+                        <th>Uso Principal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Estatinas</td>
+                        <td>Reduce 20-60%</td>
+                        <td>Reduce ~10%</td>
+                        <td>Aumenta 5-10%</td>
+                        <td>Primera línea</td>
+                    </tr>
+                    <tr>
+                        <td>Ezetimibe</td>
+                        <td>Reduce 15-20%</td>
+                        <td>Mínimo efecto</td>
+                        <td>Mínimo efecto</td>
+                        <td>Adyuvante a estatinas</td>
+                    </tr>
+                    <tr>
+                        <td>Fibratos</td>
+                        <td>Variable/Aumento</td>
+                        <td>Reduce 30-50%</td>
+                        <td>Aumenta 10-20%</td>
+                        <td>Hipertrigliceridemia</td>
+                    </tr>
+                    <tr>
+                        <td>PCSK9</td>
+                        <td>Reduce 50-60%</td>
+                        <td>Mínimo efecto</td>
+                        <td>Mínimo efecto</td>
+                        <td>Riesgo muy alto</td>
+                    </tr>
+                    <tr>
+                        <td>Omega 3</td>
+                        <td>Mínimo efecto</td>
+                        <td>Reduce 20-45%</td>
+                        <td>Leve aumento</td>
+                        <td>Hipertrigliceridemia severa</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="content-section">
+            <h2>Criterios de Selección Terapéutica</h2>
+            
+            <h3>Aproximación Escalonada</h3>
+            <ol>
+                <li><strong>Evaluar perfil lipídico y riesgo cardiovascular</strong></li>
+                <li><strong>Iniciar medidas no farmacológicas</strong> en todos los casos</li>
+                <li><strong>Añadir fármacos según riesgo y tipo de dislipidemia:</strong>
+                    <ul>
+                        <li>Hipercolesterolemia: Estatinas (primera línea) + Ezetimibe si es necesario</li>
+                        <li>Hipertrigliceridemia: Fibratos o Omega 3</li>
+                        <li>Dislipidemia mixta: Estatinas + Fibratos</li>
+                        <li>Riesgo muy alto: Estatinas + PCSK9 inhibidores</li>
+                    </ul>
+                </li>
+                <li><strong>Monitorear respuesta y tolerancia</strong> a las 4-6 semanas</li>
+                <li><strong>Ajustar dosis o añadir fármacos</strong> según alcance de metas</li>
+            </ol>
+
+            <h3>Interacciones Importantes</h3>
+            <ul>
+                <li><strong>Estatinas + Fibratos:</strong> Mayor riesgo de miopatía (especialmente con gemfibrozilo). Monitorear CK basales</li>
+                <li><strong>Estatinas + Inhibidores de CYP3A4:</strong> Mayor concentración de estatinas</li>
+                <li><strong>Ezetimibe + Estatinas:</strong> Combinación segura y sinérgica</li>
+            </ul>
+        </div>
+
+        <div class="box-importante">
+            <strong>⚠️ PUNTO CLAVE:</strong> Las estatinas son los fármacos de primera línea en el tratamiento de dislipidemias. Sin embargo, el enfoque debe ser integral: combinar medidas no farmacológicas (dieta, ejercicio, pérdida de peso), evaluación periódica del perfil lipídico y ajuste terapéutico individualizado. La educación del paciente y la adherencia son fundamentales para alcanzar las metas terapéuticas y reducir el riesgo cardiovascular.
+        </div>
+
+        <a href="index.html" class="btn-volver">← Volver al menú principal</a>
+    </div>
+</body>
+</html>
