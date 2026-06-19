@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 - Farmacología de la Hipertensión</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .header-modulo {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .header-modulo h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+
+        .header-modulo .numero {
+            font-size: 4em;
+            opacity: 0.3;
+            margin-bottom: 10px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .content-section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-section h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.6em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .content-section h3 {
+            color: #764ba2;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .content-section h4 {
+            color: #555;
+            margin-top: 15px;
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+
+        .content-section p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .content-section ul, .content-section ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .content-section li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .tabla {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95em;
+        }
+
+        .tabla th {
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .tabla td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .tabla tr:hover {
+            background: #f9f9f9;
+        }
+
+        .btn-volver {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .btn-volver:hover {
+            background: #764ba2;
+            transform: scale(1.05);
+        }
+
+        .box-importante {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .box-importante strong {
+            color: #856404;
+        }
+
+        .box-clinica {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .box-clinica strong {
+            color: #0c5460;
+        }
+
+        .subtitulo {
+            font-weight: 600;
+            color: #667eea;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .header-modulo h1 {
+                font-size: 1.8em;
+            }
+
+            .container {
+                padding: 20px 10px;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+
+            .tabla {
+                font-size: 0.85em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-modulo">
+        <div class="numero">01</div>
+        <h1>Farmacología de la Hipertensión Arterial</h1>
+    </div>
+
+    <div class="container">
+        <div class="content-section">
+            <h2>Definición y Relevancia Clínica</h2>
+            <p>La hipertensión arterial (HTA) es una enfermedad crónica no transmisible caracterizada por el aumento sostenido de los niveles de presión arterial sistólica (PAS) ≥ 140 mmHg y/o presión arterial diastólica (PAD) ≥ 90 mmHg, medida en condiciones clínicas adecuadas y confirmada en dos o más ocasiones.</p>
+            
+            <p>Es conocida como el "asesino silencioso" porque la mayoría de los pacientes no presentan síntomas evidentes hasta que ocurren daños orgánicos importantes. Constituye el principal factor de riesgo modificable para enfermedades cardiovasculares, cerebrovasculares y renales a nivel mundial.</p>
+
+            <h3>Prevalencia en Chile</h3>
+            <p>Según la Encuesta Nacional de Salud (ENS) 2017, la prevalencia de hipertensión en adultos fue del 27,6%, siendo mayor en hombres (30%) que en mujeres (25,4%). A nivel global, afecta a más de 1.280 millones de adultos según la OMS (2021).</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Clasificación de la Presión Arterial</h2>
+            
+            <h3>Según MINSAL (Chile)</h3>
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>PAS (mmHg)</th>
+                        <th>PAD (mmHg)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Normal</td>
+                        <td>&lt; 120</td>
+                        <td>&lt; 80</td>
+                    </tr>
+                    <tr>
+                        <td>Normal alta</td>
+                        <td>120–139</td>
+                        <td>80–89</td>
+                    </tr>
+                    <tr>
+                        <td>Hipertensión grado 1 (leve)</td>
+                        <td>140–159</td>
+                        <td>90–99</td>
+                    </tr>
+                    <tr>
+                        <td>Hipertensión grado 2 (moderada)</td>
+                        <td>160–179</td>
+                        <td>100–109</td>
+                    </tr>
+                    <tr>
+                        <td>Hipertensión grado 3 (severa)</td>
+                        <td>≥ 180</td>
+                        <td>≥ 110</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Según ESC/ESH 2018</h3>
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>PAS (mmHg)</th>
+                        <th>PAD (mmHg)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Óptima</td>
+                        <td>&lt; 120</td>
+                        <td>&lt; 80</td>
+                    </tr>
+                    <tr>
+                        <td>Normal</td>
+                        <td>120–129</td>
+                        <td>80–84</td>
+                    </tr>
+                    <tr>
+                        <td>Normal alta</td>
+                        <td>130–139</td>
+                        <td>85–89</td>
+                    </tr>
+                    <tr>
+                        <td>Hipertensión grado 1</td>
+                        <td>140–159</td>
+                        <td>90–99</td>
+                    </tr>
+                    <tr>
+                        <td>Hipertensión grado 2</td>
+                        <td>160–179</td>
+                        <td>100–109</td>
+                    </tr>
+                    <tr>
+                        <td>Hipertensión grado 3</td>
+                        <td>≥ 180</td>
+                        <td>≥ 110</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="box-clinica">
+                <strong>Nota clínica:</strong> Se recomienda confirmar el diagnóstico con varias mediciones realizadas en diferentes días. Es útil complementar con MAPA (medición ambulatoria de presión arterial) o MDPA (monitoreo domiciliario) para evitar el efecto de bata blanca.
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Complicaciones Clínicas</h2>
+            
+            <h3>Cardiovasculares</h3>
+            <ul>
+                <li>Hipertrofia ventricular izquierda (HVI)</li>
+                <li>Insuficiencia cardíaca</li>
+                <li>Infarto agudo de miocardio (IAM)</li>
+                <li>Fibrilación auricular y arritmias</li>
+            </ul>
+
+            <h3>Cerebrovasculares</h3>
+            <ul>
+                <li>Accidente cerebrovascular isquémico o hemorrágico (ACV)</li>
+                <li>Demencia vascular</li>
+            </ul>
+
+            <h3>Renales</h3>
+            <ul>
+                <li>Nefroesclerosis hipertensiva</li>
+                <li>Insuficiencia renal crónica</li>
+            </ul>
+
+            <h3>Oculares</h3>
+            <ul>
+                <li>Retinopatía hipertensiva</li>
+                <li>Edema de papila en crisis hipertensiva maligna</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Beneficios Clínicos del Tratamiento</h2>
+            <ul>
+                <li><strong>Reducción de riesgo cardiovascular:</strong> Disminuye el riesgo relativo de enfermedad coronaria en 20-25%</li>
+                <li><strong>Prevención de ACV:</strong> Reduce la incidencia en 35-40%</li>
+                <li><strong>Protección cardíaca:</strong> Disminuye la insuficiencia cardíaca hasta en 50%</li>
+                <li><strong>Protección renal:</strong> Retarda la progresión de nefropatía hipertensiva</li>
+                <li><strong>Reducción de mortalidad:</strong> Control eficaz reduce mortalidad por todas las causas</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Objetivos Terapéuticos</h2>
+            
+            <h3>Meta General</h3>
+            <p>Para la mayoría de adultos con HTA: <strong>PAS &lt; 140 mmHg y PAD &lt; 90 mmHg</strong></p>
+
+            <h3>En Grupos de Alto Riesgo</h3>
+            <ul>
+                <li><strong>Diabetes Mellitus:</strong> PAS &lt; 130 mmHg y PAD &lt; 80 mmHg</li>
+                <li><strong>Enfermedad Renal Crónica:</strong> PAS &lt; 130 mmHg y PAD &lt; 80 mmHg (si hay proteinuria)</li>
+                <li><strong>Antecedentes de ECV:</strong> PAS &lt; 130 mmHg y PAD &lt; 80 mmHg</li>
+            </ul>
+
+            <h3>En Adultos Mayores</h3>
+            <p>Se individualiza la meta considerando el riesgo de efectos adversos (hipotensión ortostática, caídas). Puede ser más flexible y permisible.</p>
+
+            <h3>En Embarazo</h3>
+            <p>Objetivo: mantener PAS entre 120–139 mmHg y PAD entre 80–89 mmHg, evitando reducciones excesivas.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Tratamiento No Farmacológico</h2>
+            
+            <h3>Medidas de Primera Línea</h3>
+            
+            <h4>Disminución del Consumo de Sal</h4>
+            <p>Reducción a &lt; 5 gramos de sal/día puede disminuir PAS entre 4-8 mmHg. Evitar alimentos procesados, embutidos y productos altos en sodio.</p>
+
+            <h4>Alimentación Saludable (Dieta DASH)</h4>
+            <p>Rica en frutas, verduras, cereales integrales, legumbres y proteínas magras. Puede reducir PAS entre 8-14 mmHg. Reducir grasas saturadas, azúcares y alimentos ultraprocesados.</p>
+
+            <h4>Actividad Física Regular</h4>
+            <p>Ejercicio aeróbico moderado (caminar, trotar, nadar) mínimo 30 minutos, 5 veces por semana. Disminuye PAS entre 4-9 mmHg.</p>
+
+            <h4>Reducción de Peso Corporal</h4>
+            <p>Pérdida de 5-10% del peso corporal genera reducciones clínicamente significativas. Cada 1 kg de pérdida reduce aproximadamente 1 mmHg de PAS.</p>
+
+            <h4>Moderación del Alcohol</h4>
+            <p>El exceso aumenta la presión arterial. Moderación puede reducir PAS entre 2-4 mmHg.</p>
+
+            <h4>Abandono del Tabaquismo</h4>
+            <p>Acelera el daño endotelial y aumenta riesgo cardiovascular. La cesación tiene beneficios inmediatos sobre el riesgo CV.</p>
+
+            <h4>Manejo del Estrés</h4>
+            <p>Técnicas de relajación y apoyo psicosocial pueden contribuir con descensos de 3-5 mmHg.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Tratamiento Farmacológico</h2>
+            
+            <h3>1. Diuréticos Tiazídicos</h3>
+            <p><span class="subtitulo">Mecanismo:</span> Inhiben la reabsorción de sodio y cloro en el túbulo contorneado distal, reduciendo el volumen intravascular.</p>
+            <p><span class="subtitulo">Ejemplos:</span> Hidroclorotiazida (HCTZ), Clortalidona</p>
+            <p><span class="subtitulo">Indicaciones:</span> HTA esencial, adultos mayores, afrodescendientes</p>
+            <p><span class="subtitulo">Efectos adversos:</span> Hipopotasemia, hiponatremia, hiperuricemia, hiperglucemia, disfunción eréctil</p>
+            <p><span class="subtitulo">Dosis:</span> HCTZ 12.5-25 mg/día</p>
+
+            <h3>2. Inhibidores de la Enzima Convertidora de Angiotensina (IECA)</h3>
+            <p><span class="subtitulo">Mecanismo:</span> Bloquean la conversión de angiotensina I a angiotensina II, disminuyendo vasoconstricción y secreción de aldosterona.</p>
+            <p><span class="subtitulo">Ejemplos:</span> Enalapril, Ramipril, Lisinopril</p>
+            <p><span class="subtitulo">Indicaciones:</span> HTA con disfunción ventricular, post-IAM, nefropatía diabética, ERC con proteinuria</p>
+            <p><span class="subtitulo">Contraindicaciones:</span> Embarazo, estenosis bilateral de arterias renales, angioedema previo</p>
+            <p><span class="subtitulo">Efectos adversos:</span> Tos seca (~20%), hiperpotasemia, angioedema (raro), incremento de creatinina</p>
+            <p><span class="subtitulo">Dosis:</span> Enalapril 5-10 mg/día inicial, hasta 40 mg/día</p>
+
+            <h3>3. Antagonistas del Receptor de Angiotensina II (ARA II)</h3>
+            <p><span class="subtitulo">Mecanismo:</span> Bloquean selectivamente el receptor AT1 de la angiotensina II.</p>
+            <p><span class="subtitulo">Ejemplos:</span> Losartán, Valsartán, Irbesartán</p>
+            <p><span class="subtitulo">Indicaciones:</span> Similares a IECA, buena alternativa en pacientes con tos inducida por IECA</p>
+            <p><span class="subtitulo">Efectos adversos:</span> Similares a IECA pero sin tos (mejor tolerancia)</p>
+            <p><span class="subtitulo">Dosis:</span> Losartán 50 mg/día inicial, hasta 100 mg/día</p>
+
+            <h3>4. Bloqueadores de Canales de Calcio (BCC)</h3>
+            <p><span class="subtitulo">Mecanismo:</span> Inhiben la entrada de calcio en el músculo liso vascular, provocando vasodilatación.</p>
+            <p><span class="subtitulo">Ejemplos:</span> Amlodipino, Nifedipino (dihidropiridínicos), Verapamilo, Diltiazem (no dihidropiridínicos)</p>
+            <p><span class="subtitulo">Indicaciones:</span> HTA en ancianos, pacientes con angina, enfermedad arterial periférica</p>
+            <p><span class="subtitulo">Efectos adversos:</span> Edema periférico, cefalea, enrojecimiento facial, bradicardia (no dihidropiridínicos)</p>
+            <p><span class="subtitulo">Dosis:</span> Amlodipino 2.5-5 mg/día</p>
+
+            <h3>5. Betabloqueadores</h3>
+            <p><span class="subtitulo">Mecanismo:</span> Bloquean receptores beta-adrenérgicos, disminuyendo frecuencia cardíaca y gasto cardíaco.</p>
+            <p><span class="subtitulo">Ejemplos:</span> Atenolol, Metoprolol, Bisoprolol</p>
+            <p><span class="subtitulo">Indicaciones:</span> Pacientes post-infarto, con insuficiencia cardíaca, taquiarritmias</p>
+            <p><span class="subtitulo">Contraindicaciones:</span> Asma, EPOC, bradicardia significativa, bloqueo AV</p>
+            <p><span class="subtitulo">Efectos adversos:</span> Bradicardia, fatiga, intolerancia al ejercicio, disfunción eréctil</p>
+            <p><span class="subtitulo">Dosis:</span> Atenolol 25-50 mg/día</p>
+
+            <h3>6. Antagonistas de Aldosterona</h3>
+            <p><span class="subtitulo">Ejemplo:</span> Espironolactona</p>
+            <p><span class="subtitulo">Mecanismo:</span> Antagoniza receptores de aldosterona en túbulo colector renal.</p>
+            <p><span class="subtitulo">Indicaciones:</span> HTA resistente, ICC con fracción de eyección reducida</p>
+            <p><span class="subtitulo">Precauciones:</span> Riesgo de hipercalemia, ginecomastia en hombres</p>
+
+            <h3>7. Alfa Bloqueadores</h3>
+            <p><span class="subtitulo">Ejemplo:</span> Doxazosina</p>
+            <p><span class="subtitulo">Mecanismo:</span> Bloquea receptores alfa-1 adrenérgicos, produciendo vasodilatación.</p>
+            <p><span class="subtitulo">Indicaciones:</span> HTA asociada a hiperplasia prostática benigna</p>
+            <p><span class="subtitulo">Efectos adversos:</span> Hipotensión postural, vértigo, cefalea</p>
+
+            <h3>8. Agentes de Acción Central</h3>
+            <p><span class="subtitulo">Ejemplo:</span> Metildopa</p>
+            <p><span class="subtitulo">Mecanismo:</span> Agonista alfa-2 adrenérgico central; reduce actividad simpática eferente.</p>
+            <p><span class="subtitulo">Indicaciones:</span> Hipertensión en embarazo (medicamento de elección por seguridad fetal)</p>
+            <p><span class="subtitulo">Efectos adversos:</span> Somnolencia, depresión, alteración de pruebas hepáticas</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Principios para la Elección Terapéutica</h2>
+            
+            <h3>Consideraciones por Edad</h3>
+            <ul>
+                <li><strong>&lt; 55 años:</strong> Mejor respuesta a IECA o ARA II (mayor actividad del sistema renina-angiotensina)</li>
+                <li><strong>≥ 55 años:</strong> Mayor eficacia con diuréticos tiazídicos o BCC (aumento de rigidez arterial)</li>
+            </ul>
+
+            <h3>Consideraciones por Comorbilidades</h3>
+            <ul>
+                <li><strong>Diabetes Mellitus tipo 2:</strong> IECA o ARA II por efecto nefroprotector</li>
+                <li><strong>Enfermedad Renal Crónica:</strong> IECA o ARA II como base del tratamiento</li>
+                <li><strong>Insuficiencia Cardíaca:</strong> IECA, betabloqueadores, antagonistas de aldosterona</li>
+                <li><strong>Post-Infarto:</strong> IECA, betabloqueadores, ARA II</li>
+                <li><strong>Angina o EAP:</strong> Bloqueadores de canales de calcio</li>
+                <li><strong>Hiperplasia Prostática Benigna:</strong> Alfa bloqueadores</li>
+            </ul>
+
+            <h3>Consideraciones Étnicas</h3>
+            <p>En afrodescendientes, los diuréticos tiazídicos y BCC suelen ser más eficaces como primera línea.</p>
+
+            <h3>Embarazo - Fármacos Seguros</h3>
+            <ul>
+                <li><strong>Metildopa:</strong> Primera línea en todos los trimestres</li>
+                <li><strong>Labetalol:</strong> Preferido especialmente en segundo y tercer trimestre</li>
+                <li><strong>Nifedipino de liberación prolongada:</strong> Útil como segunda línea</li>
+                <li><strong>Contraindicados:</strong> IECA, ARA II, antagonistas de aldosterona (riesgo teratogénico)</li>
+            </ul>
+
+            <h3>Terapia Combinada</h3>
+            <p>Más del 60% de los pacientes requiere dos o más fármacos. Combinaciones racionales:</p>
+            <ul>
+                <li>IECA + diurético tiazídico</li>
+                <li>ARA II + BCC</li>
+                <li>IECA + BCC</li>
+                <li><strong>Evitar:</strong> IECA + ARA II (riesgo de hiperkalemia y disfunción renal)</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Tabla Comparativa de Antihipertensivos</h2>
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>Clase</th>
+                        <th>Ejemplo</th>
+                        <th>Dosis Inicial</th>
+                        <th>Efecto Máximo</th>
+                        <th>Principales EA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>IECA</td>
+                        <td>Enalapril</td>
+                        <td>5-10 mg/día</td>
+                        <td>2-4 semanas</td>
+                        <td>Tos, hiperpotasemia</td>
+                    </tr>
+                    <tr>
+                        <td>ARA II</td>
+                        <td>Losartán</td>
+                        <td>50 mg/día</td>
+                        <td>2-4 semanas</td>
+                        <td>Hiperpotasemia</td>
+                    </tr>
+                    <tr>
+                        <td>BCC (dihidro)</td>
+                        <td>Amlodipino</td>
+                        <td>2.5-5 mg/día</td>
+                        <td>6-12 semanas</td>
+                        <td>Edema periférico</td>
+                    </tr>
+                    <tr>
+                        <td>Diurético</td>
+                        <td>HCTZ</td>
+                        <td>12.5-25 mg/día</td>
+                        <td>1-2 semanas</td>
+                        <td>Hipopotasemia</td>
+                    </tr>
+                    <tr>
+                        <td>Beta-bloqueador</td>
+                        <td>Atenolol</td>
+                        <td>25-50 mg/día</td>
+                        <td>1-2 semanas</td>
+                        <td>Bradicardia, fatiga</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="content-section">
+            <h2>Crisis Hipertensivas</h2>
+            
+            <h3>Urgencia Hipertensiva</h3>
+            <p><strong>Definición:</strong> Elevación severa de PA (PAS ≥ 180, PAD ≥ 120) sin daño agudo a órganos blanco.</p>
+            <p><strong>Manejo:</strong> Reducción gradual de PA durante 24-48 horas con antihipertensivos orales. No requiere hospitalización.</p>
+            <p><strong>Fármacos:</strong> Captopril sublingual, amlodipino, labetalol oral.</p>
+
+            <h3>Emergencia Hipertensiva</h3>
+            <p><strong>Definición:</strong> Elevación severa de PA con daño progresivo a órganos blanco (encefalopatía, disección aórtica, IAM, ACV, edema pulmonar).</p>
+            <p><strong>Manejo:</strong> Reducción controlada de PA (20-25% en primera hora) con fármacos IV. Requiere UCI.</p>
+            <p><strong>Fármacos:</strong> Nitroprusiato de sodio, labetalol IV, nicardipino, nitroglicerina.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Fármacos que Interfieren con el Tratamiento</h2>
+            
+            <h3>Antiinflamatorios No Esteroidales (AINEs)</h3>
+            <p>Reducen eficacia de diuréticos, IECA y ARA II. Precaución en hipertensos o con ERC.</p>
+
+            <h3>Corticoides Sistémicos</h3>
+            <p>Aumentan PA por retención de sodio. Monitorizar en tratamientos prolongados.</p>
+
+            <h3>Descongestionantes Simpaticomiméticos</h3>
+            <p>Provocan vasoconstricción (fenilefrina, pseudoefedrina). Evitar en hipertensos no controlados.</p>
+
+            <h3>Antidepresivos</h3>
+            <p>Tricíclicos e IRSN pueden inducir hipertensión por mecanismo simpaticomimético.</p>
+
+            <h3>Medicamentos Hormonales</h3>
+            <p>Anticonceptivos orales y terapia de reemplazo hormonal pueden aumentar PA por retención hidrosalina.</p>
+        </div>
+
+        <div class="box-importante">
+            <strong>⚠️ PUNTO CLAVE:</strong> El tratamiento de la HTA debe ser individualizado, iniciando con monoterapia o terapia combinada según grado de HTA y riesgo cardiovascular. La educación del paciente en adherencia terapéutica, cambios de estilo de vida y autocontrol de PA es fundamental para el éxito terapéutico.
+        </div>
+
+        <a href="index.html" class="btn-volver">← Volver al menú principal</a>
+    </div>
+</body>
+</html>
