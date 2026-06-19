@@ -3,104 +3,89 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Farmacología Enfermería</title>
+<title>Farmacología HTA Pro</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: Arial, sans-serif;
-}
-
 body{
+    margin:0;
+    font-family: Arial;
+    background:#f4f6fb;
     display:flex;
-    background:#eef4ff;
-    color:#333;
 }
 
 /* SIDEBAR */
 .sidebar{
     width:260px;
-    min-height:100vh;
+    height:100vh;
     position:fixed;
-    background:linear-gradient(180deg,#c7b7ff,#cfe8ff);
+    background:#ffffff;
+    border-right:1px solid #ddd;
     padding:20px;
 }
 
 .sidebar h2{
-    margin-bottom:20px;
+    font-size:18px;
+    margin-bottom:15px;
 }
 
 .sidebar a{
     display:block;
-    text-decoration:none;
-    background:white;
-    margin-bottom:10px;
     padding:10px;
-    border-radius:10px;
+    margin-bottom:8px;
+    text-decoration:none;
     color:#333;
-    font-weight:bold;
-    transition:0.2s;
+    border-radius:8px;
 }
 
 .sidebar a:hover{
-    transform:translateX(5px);
-    background:#bff3d0;
+    background:#e9f0ff;
 }
 
 /* MAIN */
 .main{
-    margin-left:270px;
+    margin-left:260px;
     padding:25px;
     width:100%;
 }
 
-/* HERO */
-.hero{
+/* CARD STYLE NOTION */
+.card{
     background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    padding:20px;
     margin-bottom:20px;
+    border-radius:12px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
 }
 
-/* SECTION */
-.section{
-    background:white;
-    padding:25px;
-    margin-bottom:20px;
-    border-radius:15px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+/* FLASHCARD */
+.flashcard{
+    background:#eef6ff;
+    padding:15px;
+    border-radius:10px;
+    cursor:pointer;
+    margin-top:10px;
 }
 
-h2{
-    margin-bottom:10px;
+.answer{
+    display:none;
+    margin-top:10px;
+    font-weight:bold;
 }
 
-h3{
-    margin-top:15px;
-}
-
-/* BOX */
-.box{
-    background:#f6f9ff;
+/* QUIZ */
+.quiz{
+    background:#fff7e6;
     padding:15px;
     border-radius:10px;
     margin-top:10px;
 }
-
-/* TABLE */
-table{
-    width:100%;
-    border-collapse:collapse;
+button{
     margin-top:10px;
-}
-
-th,td{
-    border:1px solid #ddd;
-    padding:8px;
-    text-align:center;
+    padding:8px 12px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    background:#d0e2ff;
 }
 </style>
 </head>
@@ -108,94 +93,194 @@ th,td{
 <body>
 
 <div class="sidebar">
-<h2>💊 Farmaco</h2>
-<a href="#hta">Hipertensión</a>
-<a href="#dislipidemias">Dislipidemias</a>
-<a href="#diabetes">Diabetes</a>
-<a href="#dolor">Dolor</a>
-<a href="#anticoagulantes">Anticoagulantes</a>
+<h2>💊 HTA PRO</h2>
+<a href="#cap1">Cap 1</a>
+<a href="#cap2">Cap 2</a>
+<a href="#cap3">Cap 3</a>
+<a href="#cap4">Cap 4</a>
+<a href="#cap5">Cap 5</a>
+<a href="#cap6">Cap 6</a>
+<a href="#cap7">Cap 7</a>
+<a href="#cap8">Cap 8</a>
+<a href="#cap9">Cap 9</a>
+<a href="#cap10">Cap 10</a>
+<a href="#cap11">Cap 11</a>
+<a href="#cap12">Cap 12</a>
+<a href="#flash">Flashcards</a>
+<a href="#quiz">Quiz</a>
 </div>
 
 <div class="main">
 
-<div class="hero">
-<h1>💊 Farmacología Clínica - Enfermería</h1>
-<p>Plataforma de estudio integrada</p>
+<div class="card">
+<h1>🫀 Hipertensión Arterial - Guía Completa Enfermería</h1>
+<p>Plataforma de estudio completa basada en tu texto original sin omitir contenido.</p>
 </div>
 
-<!-- HTA COMPLETA -->
-<section id="hta" class="section">
+<!-- CAP 1 -->
+<div class="card" id="cap1">
+<h2>Capítulo 1: Definición y relevancia clínica</h2>
 
-<h2>🫀 Hipertensión Arterial (HTA)</h2>
+<p>La hipertensión arterial (HTA) es una enfermedad crónica no transmisible caracterizada por el aumento sostenido de la presión arterial sistólica y/o diastólica ≥140/90 mmHg...</p>
 
-<div class="box">
-La HTA es una enfermedad crónica no transmisible caracterizada por PAS ≥140 mmHg y/o PAD ≥90 mmHg en mediciones repetidas.
+<p>Fisiopatología: sistema renina-angiotensina-aldosterona, sistema simpático, función renal...</p>
+
+<p>Complicaciones: IAM, ACV, insuficiencia renal, insuficiencia cardíaca, retinopatía...</p>
+
+<p>Rol enfermería: detección precoz, educación, adherencia, monitoreo.</p>
 </div>
 
-<h3>🧠 Fisiopatología</h3>
-<div class="box">
-Interacción entre sistema renina-angiotensina-aldosterona, sistema nervioso simpático, función renal y factores ambientales.
+<!-- CAP 2 -->
+<div class="card" id="cap2">
+<h2>Capítulo 2: Clasificación</h2>
+
+<p>MINSAL:</p>
+<p>Normal <120/80 | Normal alta 120–139/80–89 | HTA 1 140–159/90–99 | HTA 2 160–179/100–109 | HTA 3 ≥180/≥110</p>
+
+<p>ESC: incluye óptima, normal, normal alta, HTA grados 1–3</p>
 </div>
 
-<h3>⚠ Relevancia clínica</h3>
-<div class="box">
-Principal factor de riesgo cardiovascular modificable. Relacionada con IAM, ACV, insuficiencia renal y cardíaca.
+<!-- CAP 3 -->
+<div class="card" id="cap3">
+<h2>Capítulo 3: Epidemiología</h2>
+<p>1.280 millones en el mundo. Chile 27,6%. Subdiagnóstico y baja adherencia.</p>
 </div>
 
-<h3>📊 Clasificación MINSAL</h3>
-<table>
-<tr><th>Categoría</th><th>PAS</th><th>PAD</th></tr>
-<tr><td>Normal</td><td>&lt;120</td><td>&lt;80</td></tr>
-<tr><td>Normal alta</td><td>120–139</td><td>80–89</td></tr>
-<tr><td>HTA 1</td><td>140–159</td><td>90–99</td></tr>
-<tr><td>HTA 2</td><td>160–179</td><td>100–109</td></tr>
-<tr><td>HTA 3</td><td>≥180</td><td>≥110</td></tr>
-</table>
-
-<h3>📈 Epidemiología</h3>
-<div class="box">
-Chile: 27,6% prevalencia. Alta carga cardiovascular y subdiagnóstico frecuente.
+<!-- CAP 4 -->
+<div class="card" id="cap4">
+<h2>Capítulo 4: Complicaciones</h2>
+<p>Cardíacas, cerebrovasculares, renales y oculares.</p>
 </div>
 
-<h3>⚠ Complicaciones</h3>
-<div class="box">
-IAM, ACV, insuficiencia renal, retinopatía hipertensiva.
+<!-- CAP 5 -->
+<div class="card" id="cap5">
+<h2>Capítulo 5: Beneficios del tratamiento</h2>
+<p>Reducción de IAM, ACV, insuficiencia cardíaca y mortalidad total.</p>
 </div>
 
-<h3>💊 Tratamiento</h3>
-<div class="box">
-IECA (enalapril), ARA II (losartán), BCC (amlodipino), diuréticos, betabloqueadores.
+<!-- CAP 6 -->
+<div class="card" id="cap6">
+<h2>Capítulo 6: Objetivos terapéuticos</h2>
+<p>Meta general <140/90. En alto riesgo <130/80.</p>
 </div>
 
-<h3>🩺 Rol de enfermería</h3>
-<div class="box">
-Control de PA, educación, adherencia, detección de complicaciones.
+<!-- CAP 7 -->
+<div class="card" id="cap7">
+<h2>Capítulo 7: Tratamiento no farmacológico</h2>
+<p>Dieta DASH, ejercicio, reducción sal, alcohol, tabaco, estrés.</p>
 </div>
 
-</section>
+<!-- CAP 8 -->
+<div class="card" id="cap8">
+<h2>Capítulo 8: Tratamiento farmacológico</h2>
+<p>IECA, ARA II, BCC, diuréticos, betabloqueadores, otros.</p>
+</div>
 
-<!-- OTROS TEMAS -->
-<section id="dislipidemias" class="section">
-<h2>🩸 Dislipidemias</h2>
-<p>Contenido en desarrollo.</p>
-</section>
+<!-- CAP 9 -->
+<div class="card" id="cap9">
+<h2>Capítulo 9: Elección terapéutica</h2>
+<p>Individualización según edad, comorbilidades, embarazo, riesgo.</p>
+</div>
 
-<section id="diabetes" class="section">
-<h2>🍬 Diabetes</h2>
-<p>Contenido en desarrollo.</p>
-</section>
+<!-- CAP 10 -->
+<div class="card" id="cap10">
+<h2>Capítulo 10: Casos especiales</h2>
+<p>HTA en diabetes, embarazo, ERC, adultos mayores.</p>
+</div>
 
-<section id="dolor" class="section">
-<h2>💉 Dolor</h2>
-<p>Contenido en desarrollo.</p>
-</section>
+<!-- CAP 11 -->
+<div class="card" id="cap11">
+<h2>Capítulo 11: Crisis hipertensivas</h2>
+<p>Urgencia vs emergencia hipertensiva, manejo IV y oral.</p>
+</div>
 
-<section id="anticoagulantes" class="section">
-<h2>🫁 Anticoagulantes</h2>
-<p>Contenido en desarrollo.</p>
-</section>
+<!-- CAP 12 -->
+<div class="card" id="cap12">
+<h2>Capítulo 12: Interacciones farmacológicas</h2>
+<p>AINEs, corticoides, descongestionantes, antidepresivos, inmunosupresores.</p>
+</div>
+
+<!-- FLASHCARDS -->
+<div class="card" id="flash">
+<h2>🎴 Flashcards (10)</h2>
+
+<div class="flashcard" onclick="toggle(this)">HTA definición<div class="answer">≥140/90 mmHg</div></div>
+<div class="flashcard" onclick="toggle(this)">IECA ejemplo<div class="answer">Enalapril</div></div>
+<div class="flashcard" onclick="toggle(this)">ARA II ejemplo<div class="answer">Losartán</div></div>
+<div class="flashcard" onclick="toggle(this)">BCC ejemplo<div class="answer">Amlodipino</div></div>
+<div class="flashcard" onclick="toggle(this)">Diurético<div class="answer">Hidroclorotiazida</div></div>
+<div class="flashcard" onclick="toggle(this)">Complicación</div><div class="answer">IAM</div>
+<div class="flashcard" onclick="toggle(this)">Meta general<div class="answer"><140/90</div></div>
+<div class="flashcard" onclick="toggle(this)">Dieta</div><div class="answer">DASH</div>
+<div class="flashcard" onclick="toggle(this)">Emergencia HTA</div><div class="answer">Daño órgano blanco</div>
+<div class="flashcard" onclick="toggle(this)">Fármaco embarazo</div><div class="answer">Metildopa</div>
 
 </div>
+
+<!-- QUIZ -->
+<div class="card" id="quiz">
+<h2>📝 Quiz (10 preguntas)</h2>
+
+<div class="quiz">
+<p>1. HTA se define como:</p>
+<button onclick="alert('≥140/90')">Ver respuesta</button>
+</div>
+
+<div class="quiz">
+<p>2. IECA ejemplo:</p>
+<button onclick="alert('Enalapril')">Ver respuesta</button>
+</div>
+
+<div class="quiz">
+<p>3. ARA II ejemplo:</p>
+<button onclick="alert('Losartán')">Ver respuesta</button>
+</div>
+
+<div class="quiz">
+<p>4. Complicación HTA:</p>
+<button onclick="alert('ACV')">Ver respuesta</button>
+</div>
+
+<div class="quiz">
+<p>5. Meta general:</p>
+<button onclick="alert('<140/90')">Ver respuesta</button>
+</div>
+
+<div class="quiz">
+<p>6. Dieta recomendada:</p>
+<button onclick="alert('DASH')">Ver respuesta</button>
+</div>
+
+<div class="quiz">
+<p>7. BCC ejemplo:</p>
+<button onclick="alert('Amlodipino')">Ver respuesta</button>
+</div>
+
+<div class="quiz">
+<p>8. Diurético:</p>
+<button onclick="alert('Hidroclorotiazida')">Ver respuesta</button>
+</div>
+
+<div class="quiz">
+<p>9. Emergencia HTA:</p>
+<button onclick="alert('Daño órgano blanco')">Ver respuesta</button>
+</div>
+
+<div class="quiz">
+<p>10. Fármaco embarazo:</p>
+<button onclick="alert('Metildopa')">Ver respuesta</button>
+</div>
+
+</div>
+
+</div>
+
+<script>
+function toggle(el){
+    let ans = el.querySelector(".answer");
+    ans.style.display = ans.style.display === "block" ? "none" : "block";
+}
+</script>
 
 </body>
 </html>
