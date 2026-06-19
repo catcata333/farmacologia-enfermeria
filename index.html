@@ -1,337 +1,171 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Farmacología Clínica</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmacología Clínica y Farmacovigilancia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
-:root{
-    --bg:#f5f7fb;
-    --card:#ffffff;
-    --text:#1f1f1f;
-    --muted:#6b6b6b;
-    --accent:#4f7cff;
-}
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
 
-body.dark{
-    --bg:#0f172a;
-    --card:#1e293b;
-    --text:#e5e7eb;
-    --muted:#94a3b8;
-    --accent:#60a5fa;
-}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-body{
-    margin:0;
-    font-family: Arial;
-    background:var(--bg);
-    color:var(--text);
-    display:flex;
-    transition:0.3s;
-}
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
 
-/* SIDEBAR */
-.sidebar{
-    width:270px;
-    height:100vh;
-    position:fixed;
-    background:var(--card);
-    border-right:1px solid #ddd;
-    padding:20px;
-}
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
 
-.sidebar h2{
-    font-size:16px;
-}
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
 
-.sidebar a{
-    display:block;
-    padding:10px;
-    margin:6px 0;
-    text-decoration:none;
-    color:var(--text);
-    border-radius:8px;
-}
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
 
-.sidebar a:hover{
-    background:rgba(79,124,255,0.1);
-}
+        .module-card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
 
-.main{
-    margin-left:270px;
-    padding:25px;
-    width:100%;
-}
+        .module-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+        }
 
-/* HEADER */
-.header{
-    background:var(--card);
-    padding:20px;
-    border-radius:12px;
-    border:1px solid #ddd;
-    margin-bottom:20px;
-}
+        .module-number {
+            font-size: 3em;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
 
-/* CARDS */
-.card{
-    background:var(--card);
-    padding:18px;
-    border-radius:12px;
-    border:1px solid #ddd;
-    margin-bottom:15px;
-}
+        .module-card h2 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
 
-/* ACCORDION */
-details{
-    background:var(--card);
-    padding:12px;
-    border-radius:10px;
-    margin-bottom:10px;
-    border:1px solid #ddd;
-}
+        .btn-modulo {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
 
-summary{
-    cursor:pointer;
-    font-weight:bold;
-}
+        .btn-modulo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
 
-/* FLASHCARDS */
-.flash{
-    background:#eef2ff;
-    padding:12px;
-    border-radius:10px;
-    margin-top:10px;
-    cursor:pointer;
-}
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            opacity: 0.9;
+        }
 
-.answer{ display:none; margin-top:8px; font-weight:bold; }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
 
-/* QUIZ */
-button{
-    padding:8px 12px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    background:var(--accent);
-    color:white;
-}
-
-/* SEARCH */
-input{
-    width:100%;
-    padding:10px;
-    border-radius:10px;
-    border:1px solid #ccc;
-    margin-bottom:15px;
-}
-
-/* GRID */
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:10px;
-}
-
-/* TOGGLE */
-.topbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-</style>
+            .modules-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <div class="container">
+        <header>
+            <h1>Farmacología Clínica y Farmacovigilancia</h1>
+            <p>Módulos de Aprendizaje</p>
+        </header>
 
-<div class="sidebar">
-<h2>💊 Farmacología</h2>
-<a href="#hta">🫀 HTA</a>
-<a href="#flash">🎴 Flashcards</a>
-<a href="#quiz">📝 Quiz</a>
-</div>
+        <div class="modules-grid">
+            <div class="module-card">
+                <div class="module-number">01</div>
+                <h2>Farmacología de la Hipertensión</h2>
+                <a href="modulo-1-hipertension.html" class="btn-modulo">Entrar al módulo</a>
+            </div>
 
-<div class="main">
+            <div class="module-card">
+                <div class="module-number">02</div>
+                <h2>Farmacología de la Dislipidemia</h2>
+                <a href="modulo-2-dislipidemia.html" class="btn-modulo">Entrar al módulo</a>
+            </div>
 
-<div class="header">
-<div class="topbar">
-<h2>Farmacología Clínica y Farmacovigilancia</h2>
-<button onclick="toggleDark()">🌙</button>
-</div>
+            <div class="module-card">
+                <div class="module-number">03</div>
+                <h2>Farmacología Anticoagulantes y Antihemorrágicos</h2>
+                <a href="modulo-3-anticoagulantes.html" class="btn-modulo">Entrar al módulo</a>
+            </div>
 
-<input onkeyup="searchHTA()" id="search" placeholder="Buscar en HTA...">
-</div>
+            <div class="module-card">
+                <div class="module-number">04</div>
+                <h2>Farmacología de la Diabetes</h2>
+                <a href="modulo-4-diabetes.html" class="btn-modulo">Entrar al módulo</a>
+            </div>
 
-<!-- DASHBOARD -->
-<div class="card">
-<h3>📊 Dashboard</h3>
-<div class="grid">
-<div>🫀 HTA</div>
-<div>🩸 Dislipidemias</div>
-<div>🍬 Diabetes</div>
-<div>💉 Dolor</div>
-<div>🫁 Anticoagulantes</div>
-</div>
-</div>
+            <div class="module-card">
+                <div class="module-number">05</div>
+                <h2>Farmacología del Dolor</h2>
+                <a href="modulo-5-dolor.html" class="btn-modulo">Entrar al módulo</a>
+            </div>
 
-<!-- HTA COMPLETA -->
-<section id="hta" class="card">
+            <div class="module-card">
+                <div class="module-number">06</div>
+                <h2>Toxicología</h2>
+                <a href="modulo-6-toxicologia.html" class="btn-modulo">Entrar al módulo</a>
+            </div>
 
-<h2>🫀 Hipertensión Arterial (HTA) - COMPLETA</h2>
+            <div class="module-card">
+                <div class="module-number">07</div>
+                <h2>Prescripción y Errores de Medicación</h2>
+                <a href="modulo-7-prescripcion.html" class="btn-modulo">Entrar al módulo</a>
+            </div>
+        </div>
 
-<div id="htaContent">
-
-<details open>
-<summary>Capítulo 1: Definición y relevancia clínica</summary>
-<p>
-La hipertensión arterial (HTA) es una enfermedad crónica no transmisible caracterizada por el aumento sostenido de la presión arterial sistólica y/o diastólica por encima de los valores normales. Se define como PAS ≥140 mmHg y/o PAD ≥90 mmHg en mediciones repetidas.
-</p>
-<p>
-Fisiopatología: interacción entre sistema renina-angiotensina-aldosterona, sistema simpático, función renal y factores ambientales.
-</p>
-<p>
-Complicaciones: IAM, ACV, insuficiencia renal, insuficiencia cardíaca, retinopatía.
-</p>
-<p>
-Rol enfermería: detección precoz, educación, adherencia, monitoreo.
-</p>
-</details>
-
-<details>
-<summary>Capítulo 2: Clasificación MINSAL y ESC</summary>
-<p>
-MINSAL: Normal &lt;120/80, Normal alta 120–139/80–89, HTA 1 140–159/90–99, HTA 2 160–179/100–109, HTA 3 ≥180/≥110.
-</p>
-<p>
-ESC: Óptima &lt;120/80, Normal 120–129/80–84, Normal alta 130–139/85–89, HTA ≥140/≥90.
-</p>
-</details>
-
-<details>
-<summary>Capítulo 3: Epidemiología</summary>
-<p>
-Más de 1.280 millones de personas en el mundo. En Chile 27,6% prevalencia. Problemas: subdiagnóstico, baja adherencia.
-</p>
-</details>
-
-<details>
-<summary>Capítulo 4: Complicaciones</summary>
-<p>
-Cardíacas: IAM, HVI, IC<br>
-Cerebrovasculares: ACV<br>
-Renales: ERC<br>
-Oculares: retinopatía
-</p>
-</details>
-
-<details>
-<summary>Capítulo 5: Beneficios del tratamiento</summary>
-<p>
-Reducción de ACV, IAM, insuficiencia cardíaca y mortalidad total.
-</p>
-</details>
-
-<details>
-<summary>Capítulo 6: Objetivos terapéuticos</summary>
-<p>
-General: &lt;140/90<br>
-Alto riesgo: &lt;130/80
-</p>
-</details>
-
-<details>
-<summary>Capítulo 7: Tratamiento no farmacológico</summary>
-<p>
-Dieta DASH, ejercicio, reducción de sal, alcohol, tabaco, estrés.
-</p>
-</details>
-
-<details>
-<summary>Capítulo 8: Tratamiento farmacológico</summary>
-<p>
-IECA (enalapril), ARA II (losartán), BCC (amlodipino), diuréticos, betabloqueadores.
-</p>
-</details>
-
-<details>
-<summary>Capítulo 9: Elección terapéutica</summary>
-<p>
-Individualizado según edad, comorbilidades, embarazo y riesgo cardiovascular.
-</p>
-</details>
-
-<details>
-<summary>Capítulo 10: Casos especiales</summary>
-<p>
-Diabetes, ERC, embarazo, adultos mayores.
-</p>
-</details>
-
-<details>
-<summary>Capítulo 11: Crisis hipertensiva</summary>
-<p>
-Urgencia vs emergencia hipertensiva. Manejo IV en emergencia.
-</p>
-</details>
-
-<details>
-<summary>Capítulo 12: Interacciones farmacológicas</summary>
-<p>
-AINEs, corticoides, descongestionantes, antidepresivos, inmunosupresores.
-</p>
-</details>
-
-</div>
-</section>
-
-<!-- FLASHCARDS -->
-<div class="card" id="flash">
-<h2>🎴 Flashcards</h2>
-
-<div class="flash" onclick="flip(this)">HTA definición<div class="answer">≥140/90 mmHg</div></div>
-<div class="flash" onclick="flip(this)">IECA ejemplo<div class="answer">Enalapril</div></div>
-<div class="flash" onclick="flip(this)">ARA II<div class="answer">Losartán</div></div>
-<div class="flash" onclick="flip(this)">BCC<div class="answer">Amlodipino</div></div>
-<div class="flash" onclick="flip(this)">Diurético<div class="answer">Hidroclorotiazida</div></div>
-<div class="flash" onclick="flip(this)">Complicación<div class="answer">ACV</div></div>
-<div class="flash" onclick="flip(this)">Meta</div><div class="answer">140/90</div>
-<div class="flash" onclick="flip(this)">Dieta</div><div class="answer">DASH</div>
-<div class="flash" onclick="flip(this)">Embarazo</div><div class="answer">Metildopa</div>
-<div class="flash" onclick="flip(this)">Emergencia</div><div class="answer">Daño órgano blanco</div>
-
-</div>
-
-<!-- QUIZ -->
-<div class="card" id="quiz">
-<h2>📝 Quiz</h2>
-
-<button onclick="alert('≥140/90')">1. Definición HTA</button><br><br>
-<button onclick="alert('Enalapril')">2. IECA</button><br><br>
-<button onclick="alert('Losartán')">3. ARA II</button><br><br>
-<button onclick="alert('ACV')">4. Complicación</button><br><br>
-<button onclick="alert('<140/90')">5. Meta</button>
-
-</div>
-
-</div>
-
-<script>
-function flip(el){
-    let a = el.querySelector(".answer");
-    a.style.display = a.style.display === "block" ? "none" : "block";
-}
-
-function toggleDark(){
-    document.body.classList.toggle("dark");
-}
-
-function searchHTA(){
-    let q = document.getElementById("search").value.toLowerCase();
-    document.querySelectorAll("#htaContent details").forEach(d=>{
-        d.style.display = d.innerText.toLowerCase().includes(q) ? "block":"none";
-    });
-}
-</script>
-
+        <footer>
+            <p>Material elaborado para evaluación de Farmacología Clínica y Farmacovigilancia</p>
+        </footer>
+    </div>
 </body>
 </html>
