@@ -4,10 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Farmacología Clínica y Farmacovigilancia</title>
+<title>Farmacología Clínica - HTA</title>
 
 <style>
-
 *{
     margin:0;
     padding:0;
@@ -16,26 +15,23 @@
 }
 
 body{
-    background:#eef4ff;
     display:flex;
+    background: linear-gradient(135deg,#eef4ff,#f7fbff);
+    color:#333;
 }
 
+/* SIDEBAR */
 .sidebar{
     width:270px;
     min-height:100vh;
-    background:linear-gradient(
-    180deg,
-    #d7c7ff,
-    #cfe8ff
-    );
-
+    background: linear-gradient(180deg,#c7b7ff,#cfe8ff);
     padding:25px;
     position:fixed;
+    box-shadow:2px 0 10px rgba(0,0,0,0.1);
 }
 
 .sidebar h2{
     margin-bottom:20px;
-    color:#333;
 }
 
 .sidebar a{
@@ -46,66 +42,62 @@ body{
     border-radius:10px;
     margin-bottom:10px;
     background:white;
+    font-weight:bold;
+    transition:0.2s;
 }
 
 .sidebar a:hover{
-    background:#c8f5d5;
+    background:#bff3d0;
+    transform:translateX(5px);
 }
 
+/* MAIN */
 .main{
     margin-left:280px;
     padding:30px;
     width:100%;
 }
 
+/* HERO */
 .hero{
     background:white;
     padding:30px;
     border-radius:20px;
     margin-bottom:25px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
-.hero h1{
-    color:#4b4b4b;
-    margin-bottom:10px;
-}
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-}
-
-.card{
-    background:white;
-    border-radius:20px;
-    padding:25px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.08);
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:translateY(-5px);
-}
-
-.card h3{
-    margin-bottom:10px;
-}
-
+/* SECTIONS */
 .section{
     background:white;
-    margin-top:30px;
+    margin-top:25px;
     padding:25px;
     border-radius:20px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    box-shadow:0 6px 15px rgba(0,0,0,0.08);
 }
 
+h2{
+    margin-bottom:10px;
+}
+
+h3{
+    margin-top:15px;
+}
+
+/* BOXES */
+.box{
+    background:#f4f8ff;
+    padding:15px;
+    border-radius:12px;
+    margin-top:10px;
+}
+
+/* FLASHCARD */
 .flashcard{
     margin-top:15px;
     padding:20px;
     border-radius:15px;
-    background:#e9f7ff;
+    background: linear-gradient(135deg,#e9f7ff,#f3fff7);
     cursor:pointer;
     text-align:center;
 }
@@ -114,293 +106,178 @@ body{
     display:none;
     margin-top:10px;
     font-weight:bold;
+    color:#2b6cb0;
+}
+
+/* QUIZ */
+.quiz-box{
+    margin-top:15px;
+    padding:15px;
+    border-radius:12px;
+    background:#f8f9ff;
 }
 
 .quiz-btn{
-    margin-top:15px;
-    padding:10px 20px;
+    margin-top:10px;
+    padding:10px 15px;
     border:none;
     border-radius:10px;
-    background:#b7f0c2;
+    background:#7ee2a8;
     cursor:pointer;
+    font-weight:bold;
 }
-
 </style>
 </head>
 
 <body>
 
 <div class="sidebar">
+<h2>💊 HTA Pro</h2>
 
-<h2>💊 Farmacología</h2>
-
-<a href="#hta">🫀 Hipertensión</a>
-<a href="#dislipidemias">🩸 Dislipidemias</a>
-<a href="#coagulacion">🫁 Anticoagulantes</a>
-<a href="#diabetes">🍬 Diabetes</a>
-<a href="#dolor">💉 Dolor</a>
-
+<a href="#definicion">Definición</a>
+<a href="#clasificacion">Clasificación</a>
+<a href="#epidemiologia">Epidemiología</a>
+<a href="#complicaciones">Complicaciones</a>
+<a href="#farmacos">Fármacos</a>
+<a href="#enfermeria">Rol Enfermería</a>
 </div>
 
 <div class="main">
 
 <div class="hero">
-
-<h1>💊 Farmacología Clínica y Farmacovigilancia</h1>
-
-<p>
-Plataforma interactiva de estudio para Enfermería.
-</p>
-
-<br>
-
-<p>
-📚 Hipertensión • Dislipidemias • Anticoagulantes • Diabetes • Dolor
-</p>
-
-<br>
-
-<p>
-🎯 Enfocada en farmacología clínica, farmacovigilancia y preparación de evaluaciones.
-</p>
-
-</div>
-<div class="cards">
-
-<div class="card">
-<h3>🫀 Hipertensión</h3>
-<p>Clasificación, tratamiento y fármacos.</p>
+<h1>🫀 Hipertensión Arterial - Guía Completa Enfermería</h1>
+<p>Basado en OMS, MINSAL y guías clínicas</p>
 </div>
 
-<div class="card">
-<h3>🩸 Dislipidemias</h3>
-<p>Estatinas y otros hipolipemiantes.</p>
+<!-- DEFINICION -->
+<section id="definicion" class="section">
+<h2>📖 Definición</h2>
+
+<div class="box">
+La HTA es una enfermedad crónica no transmisible caracterizada por presión arterial ≥140/90 mmHg en mediciones repetidas.
 </div>
 
-<div class="card">
-<h3>🫁 Anticoagulantes</h3>
-<p>Warfarina, heparinas y ACOD.</p>
-</div>
-
-<div class="card">
-<h3>🍬 Diabetes</h3>
-<p>Insulinas y antidiabéticos.</p>
-</div>
-
-<div class="card">
-<h3>💉 Dolor</h3>
-<p>AINEs, opioides y escalera OMS.</p>
-</div>
-
-</div>
-
-<section id="hta" class="section">
-
-<h2>🫀 Hipertensión Arterial</h2>
-
-<br>
-
-<h3>📖 Definición</h3>
-
-<p>
-La hipertensión arterial es una enfermedad crónica caracterizada por una presión arterial sistólica ≥ 140 mmHg y/o una presión arterial diastólica ≥ 90 mmHg.
-</p>
-
-<br>
-
-<h3>⭐ ¿Por qué es importante?</h3>
-
+<h3>🧠 Fisiopatología resumida</h3>
+<div class="box">
+Interacción entre:
 <ul>
-
-<li>Principal factor de riesgo cardiovascular modificable.</li>
-
-<li>Aumenta el riesgo de IAM.</li>
-
-<li>Aumenta el riesgo de ACV.</li>
-
-<li>Favorece insuficiencia renal.</li>
-
-<li>Puede causar insuficiencia cardíaca.</li>
-
+<li>Sistema renina-angiotensina-aldosterona</li>
+<li>Sistema nervioso simpático</li>
+<li>Función renal</li>
+<li>Tono vascular</li>
+<li>Factores genéticos y ambientales</li>
 </ul>
+</div>
 
-<br>
+<h3>⚠ Relevancia clínica</h3>
+<div class="box">
+Principal factor de riesgo modificable para:
+IAM, ACV, insuficiencia renal, insuficiencia cardíaca y retinopatía.
+</div>
+</section>
 
-<h3>📊 Clasificación</h3>
+<!-- CLASIFICACION -->
+<section id="clasificacion" class="section">
+<h2>📊 Clasificación</h2>
 
-<table border="1" style="width:100%;border-collapse:collapse;text-align:center">
+<div class="box">
+<strong>MINSAL / OMS:</strong><br><br>
+Normal: &lt;120 / &lt;80<br>
+Normal alta: 120–139 / 80–89<br>
+HTA 1: 140–159 / 90–99<br>
+HTA 2: 160–179 / 100–109<br>
+HTA 3: ≥180 / ≥110
+</div>
 
-<tr>
-<th>Categoría</th>
-<th>PAS</th>
-<th>PAD</th>
-</tr>
+<div class="box">
+<strong>ESC:</strong><br><br>
+Óptima: &lt;120 / &lt;80<br>
+Normal: 120–129 / 80–84<br>
+Normal alta: 130–139 / 85–89<br>
+HTA: ≥140 / ≥90
+</div>
+</section>
 
-<tr>
-<td>Normal</td>
-<td><120</td>
-<td><80</td>
-</tr>
+<!-- EPIDEMIOLOGIA -->
+<section id="epidemiologia" class="section">
+<h2>📈 Epidemiología</h2>
 
-<tr>
-<td>Normal Alta</td>
-<td>120-139</td>
-<td>80-89</td>
-</tr>
+<div class="box">
+Mundo: >1.280 millones de personas con HTA.<br><br>
+Chile: 27,6% de prevalencia (ENS 2017).<br><br>
+Problemas:
+<ul>
+<li>Subdiagnóstico</li>
+<li>Baja adherencia</li>
+<li>Mal control</li>
+</ul>
+</div>
+</section>
 
-<tr>
-<td>HTA Grado 1</td>
-<td>140-159</td>
-<td>90-99</td>
-</tr>
+<!-- COMPLICACIONES -->
+<section id="complicaciones" class="section">
+<h2>⚠ Complicaciones</h2>
 
-<tr>
-<td>HTA Grado 2</td>
-<td>160-179</td>
-<td>100-109</td>
-</tr>
+<div class="box">
+<strong>Cardíacas:</strong> IAM, HVI, IC<br>
+<strong>Cerebro:</strong> ACV, demencia vascular<br>
+<strong>Renal:</strong> ERC<br>
+<strong>Ocular:</strong> retinopatía
+</div>
+</section>
 
-<tr>
-<td>HTA Grado 3</td>
-<td>≥180</td>
-<td>≥110</td>
-</tr>
+<!-- FARMACOS -->
+<section id="farmacos" class="section">
+<h2>💊 Tratamiento farmacológico</h2>
 
-</table>
+<div class="box">
+<strong>IECA:</strong> enalapril (tos seca)<br>
+<strong>ARA II:</strong> losartán<br>
+<strong>BCC:</strong> amlodipino (edema)<br>
+<strong>Diuréticos:</strong> hidroclorotiazida (hipokalemia)<br>
+<strong>Betabloqueadores:</strong> metoprolol (bradicardia)
+</div>
+</section>
 
-<br>
+<!-- ENFERMERIA -->
+<section id="enfermeria" class="section">
+<h2>🩺 Rol de Enfermería</h2>
 
-<h3>💊 Fármacos más preguntados</h3>
-
-<table border="1" style="width:100%;border-collapse:collapse">
-
-<tr>
-<th>Grupo</th>
-<th>Ejemplo</th>
-<th>RAM importante</th>
-</tr>
-
-<tr>
-<td>IECA</td>
-<td>Enalapril</td>
-<td>Tos seca</td>
-</tr>
-
-<tr>
-<td>ARA II</td>
-<td>Losartán</td>
-<td>Mareo</td>
-</tr>
-
-<tr>
-<td>BCC</td>
-<td>Amlodipino</td>
-<td>Edema periférico</td>
-</tr>
-
-<tr>
-<td>Betabloqueadores</td>
-<td>Metoprolol</td>
-<td>Bradicardia</td>
-</tr>
-
-<tr>
-<td>Diuréticos</td>
-<td>Hidroclorotiazida</td>
-<td>Hipopotasemia</td>
-</tr>
-
-</table>
-
-<br>
+<div class="box">
+• Control de presión arterial correcto<br>
+• Educación en estilo de vida (DASH, ejercicio, sal)<br>
+• Promoción de adherencia terapéutica<br>
+• Detección de efectos adversos<br>
+• Prevención de complicaciones
+</div>
 
 <h3>🎴 Flashcard</h3>
 
 <div class="flashcard" onclick="toggleCard()">
+¿Qué define HTA?
 
-¿Qué valor define HTA?
-
-<div id="respuesta" class="answer">
-
-PAS ≥ 140 mmHg y/o PAD ≥ 90 mmHg.
-
+<div id="answer" class="answer">
+PAS ≥140 mmHg y/o PAD ≥90 mmHg
+</div>
 </div>
 
+<h3>📝 Quiz</h3>
+
+<div class="quiz-box">
+<p>¿Cuál es un ARA II?</p>
+
+<button class="quiz-btn" onclick="alert('Losartán ✔')">Ver respuesta</button>
 </div>
 
-<br>
-
-<h3>📝 Mini Quiz</h3>
-
-<button class="quiz-btn" onclick="mostrarRespuesta()">
-
-Mostrar respuesta
-
-</button>
-
-<p id="quiz"></p>
-
-<br>
-
-<h3>⚡ Resumen Ultra Rápido</h3>
-
-<ul>
-
-<li>HTA = ≥140/90 mmHg.</li>
-
-<li>Principal factor de riesgo cardiovascular.</li>
-
-<li>IECA → Enalapril → Tos.</li>
-
-<li>ARA II → Losartán.</li>
-
-<li>BCC → Amlodipino.</li>
-
-<li>Diurético → Hidroclorotiazida.</li>
-
-</ul>
-
-</section>
-
-<section id="dislipidemias" class="section">
-<h2>🩸 Dislipidemias</h2>
-<p>Contenido próximamente.</p>
-</section>
-
-<section id="coagulacion" class="section">
-<h2>🫁 Anticoagulantes</h2>
-<p>Contenido próximamente.</p>
-</section>
-
-<section id="diabetes" class="section">
-<h2>🍬 Diabetes</h2>
-<p>Contenido próximamente.</p>
-</section>
-
-<section id="dolor" class="section">
-<h2>💉 Dolor</h2>
-<p>Contenido próximamente.</p>
 </section>
 
 </div>
 
 <script>
-
 function toggleCard(){
-    const respuesta=document.getElementById("respuesta");
-
-    if(respuesta.style.display==="block"){
-        respuesta.style.display="none";
-    }else{
-        respuesta.style.display="block";
-    }
+    const a = document.getElementById("answer");
+    a.style.display = a.style.display === "block" ? "none" : "block";
 }
-
-function mostrarRespuesta(){
-    document.getElementById("quiz").innerHTML =
-    "✅ Respuesta: PAS ≥ 140 mmHg y/o PAD ≥ 90 mmHg";
-}
-
 </script>
 
 </body>
