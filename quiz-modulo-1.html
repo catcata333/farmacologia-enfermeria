@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Módulo 1 - Hipertensión</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .header h1 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .progress-bar {
+            background: #f0f0f0;
+            height: 10px;
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            height: 100%;
+            transition: width 0.3s ease;
+        }
+
+        .quiz-container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: none;
+        }
+
+        .quiz-container.active {
+            display: block;
+        }
+
+        .question-number {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+        }
+
+        .question-text {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .option {
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.05em;
+            background: white;
+        }
+
+        .option:hover:not(.disabled) {
+            border-color: #667eea;
+            background: #f8f9ff;
+            transform: translateX(5px);
+        }
+
+        .option.selected {
+            border-color: #667eea;
+            background: #f0f3ff;
+            font-weight: 600;
+        }
+
+        .option.correct {
+            border-color: #28a745;
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .option.incorrect {
+            border-color: #dc3545;
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .option.disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        .feedback {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .feedback.show {
+            display: block;
+        }
+
+        .feedback.correct {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            color: #155724;
+        }
+
+        .feedback.incorrect {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            color: #721c24;
+        }
+
+        .feedback-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .feedback-explanation {
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-top: 10px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            font-size: 1em;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-next {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            flex: 1;
+        }
+
+        .btn-next:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-next:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .results-container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: none;
+            text-align: center;
+        }
+
+        .results-container.active {
+            display: block;
+        }
+
+        .score-display {
+            font-size: 3em;
+            font-weight: 700;
+            color: #667eea;
+            margin: 30px 0;
+        }
+
+        .score-percentage {
+            font-size: 1.5em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .score-message {
+            font-size: 1.3em;
+            font-weight: 600;
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .score-message.excellent {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .score-message.good {
+            background: #cfe2ff;
+            color: #084298;
+        }
+
+        .score-message.fair {
+            background: #fff3cd;
+            color: #664d03;
+        }
+
+        .score-message.poor {
+            background: #f8d7da;
+            color: #842029;
+        }
+
+        .results-summary {
+            margin: 30px 0;
+            text-align: left;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+            font-size: 1.1em;
+        }
+
+        .summary-item:last-child {
+            border-bottom: none;
+        }
+
+        .summary-value {
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        .btn-restart {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin-top: 20px;
+        }
+
+        .btn-restart:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-home {
+            background: #6c757d;
+            color: white;
+            margin-top: 10px;
+        }
+
+        .btn-home:hover {
+            background: #5a6268;
+        }
+
+        .review-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid #ddd;
+            text-align: left;
+        }
+
+        .review-item.correct {
+            border-left-color: #28a745;
+            background: #f0fff4;
+        }
+
+        .review-item.incorrect {
+            border-left-color: #dc3545;
+            background: #fff5f5;
+        }
+
+        .review-question {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .review-your-answer {
+            margin: 8px 0;
+            padding: 8px;
+            background: #fff3cd;
+            border-radius: 5px;
+            font-size: 0.95em;
+        }
+
+        .review-correct-answer {
+            margin: 8px 0;
+            padding: 8px;
+            background: #d4edda;
+            border-radius: 5px;
+            font-size: 0.95em;
+            color: #155724;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🫀 Quiz Módulo 1 - Hipertensión Arterial</h1>
+            <p>8 preguntas de evaluación</p>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <p id="progressText">Pregunta 1 de 8</p>
+        </div>
+
+        <div class="quiz-container active" id="quizContainer">
+            <div class="question-number" id="questionNumber"></div>
+            <div class="question-text" id="questionText"></div>
+            <div class="options" id="optionsContainer"></div>
+            <div class="feedback" id="feedback"></div>
+            <div class="button-group">
+                <button class="btn btn-next" id="nextBtn" disabled>Siguiente →</button>
+            </div>
+        </div>
+
+        <div class="results-container" id="resultsContainer">
+            <h2>📊 Resultados - Módulo 1</h2>
+            <div class="score-display" id="scoreDisplay"></div>
+            <div class="score-percentage" id="scorePercentage"></div>
+            <div class="score-message" id="scoreMessage"></div>
+            
+            <div class="results-summary">
+                <div class="summary-item">
+                    <span>Respuestas Correctas:</span>
+                    <span class="summary-value" id="correctCount"></span>
+                </div>
+                <div class="summary-item">
+                    <span>Respuestas Incorrectas:</span>
+                    <span class="summary-value" id="incorrectCount"></span>
+                </div>
+                <div class="summary-item">
+                    <span>Total de Preguntas:</span>
+                    <span class="summary-value">8</span>
+                </div>
+            </div>
+
+            <div id="reviewContainer"></div>
+
+            <button class="btn btn-restart" onclick="location.reload()">🔄 Reintentar Quiz</button>
+            <a href="modulo-1-hipertension.html"><button class="btn btn-home">📖 Volver al Módulo</button></a>
+            <a href="index.html"><button class="btn btn-home">🏠 Volver al Menú</button></a>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "¿Cuál es la definición de HTA según MINSAL?",
+                options: [
+                    "PAS ≥ 130 y/o PAD ≥ 85 mmHg",
+                    "PAS ≥ 140 y/o PAD ≥ 90 mmHg",
+                    "PAS ≥ 150 y/o PAD ≥ 100 mmHg",
+                    "PAS ≥ 160 y/o PAD ≥ 110 mmHg"
+                ],
+                correct: 1,
+                explanation: "Según MINSAL y OMS, HTA es PAS ≥ 140 mmHg y/o PAD ≥ 90 mmHg, confirmada en dos o más ocasiones."
+            },
+            {
+                question: "¿Cuál es la prevalencia de HTA en adultos en Chile (ENS 2017)?",
+                options: [
+                    "15,6%",
+                    "22,3%",
+                    "27,6%",
+                    "35,2%"
+                ],
+                correct: 2,
+                explanation: "La ENS 2017 reportó una prevalencia de HTA del 27,6%, siendo mayor en hombres (30%) que en mujeres (25,4%)."
+            },
+            {
+                question: "¿Cuál es la PRINCIPAL complicación cardiovascular de la HTA?",
+                options: [
+                    "Hipokalemia",
+                    "Insuficiencia cardíaca",
+                    "Disminución de presión arterial",
+                    "Aumento de HDL"
+                ],
+                correct: 1,
+                explanation: "La HTA no tratada causa hipertrofia ventricular izquierda que progresa a insuficiencia cardíaca, siendo una complicación grave y frecuente."
+            },
+            {
+                question: "¿Cuál es la meta de PA en un paciente con DIABETES y HTA?",
+                options: [
+                    "< 140/90 mmHg",
+                    "< 130/80 mmHg",
+                    "< 120/70 mmHg",
+                    "< 100/60 mmHg"
+                ],
+                correct: 1,
+                explanation: "En pacientes con diabetes, la meta es más estricta: PAS < 130 mmHg y PAD < 80 mmHg para reducir riesgo macrovascular y microvascular."
+            },
+            {
+                question: "¿Cuál es el FÁRMACO de primera línea en menores de 55 años?",
+                options: [
+                    "Diuréticos tiazídicos",
+                    "IECA o ARA II",
+                    "Betabloqueadores",
+                    "Bloqueadores de canales de calcio"
+                ],
+                correct: 1,
+                explanation: "En < 55 años, IECA/ARA II son primera línea porque esta población tiene mayor actividad del sistema renina-angiotensina."
+            },
+            {
+                question: "¿Cuál es el MECANISMO de acción de los IECA?",
+                options: [
+                    "Bloquean receptores AT1",
+                    "Inhiben HMG-CoA reductasa",
+                    "Bloquean conversión de Angiotensina I a II",
+                    "Inhiben reabsorción de sodio"
+                ],
+                correct: 2,
+                explanation: "Los IECA bloquean la enzima convertidora de angiotensina (ACE), impidiendo la conversión de Ang I a Ang II, reduciendo vasoconstricción."
+            },
+            {
+                question: "¿Cuál es un EFECTO ADVERSO FRECUENTE de los IECA?",
+                options: [
+                    "Diarrea severa",
+                    "Tos seca (~20% de pacientes)",
+                    "Hipotensión postural",
+                    "Bradicardia"
+                ],
+                correct: 1,
+                explanation: "La tos seca ocurre en ~20% de pacientes por acumulación de bradicinina. Es reversible al suspender el fármaco."
+            },
+            {
+                question: "¿Cuál es el FÁRMACO DE ELECCIÓN en embarazadas con HTA?",
+                options: [
+                    "IECA",
+                    "ARA II",
+                    "Metildopa",
+                    "Atenolol"
+                ],
+                correct: 2,
+                explanation: "Metildopa es el fármaco de primera línea en embarazo (todos los trimestres) por su amplio perfil de seguridad materno-fetal comprobado."
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+        let answered = [];
+        let selectedAnswers = [];
+
+        function loadQuestion() {
+            const question = questions[currentQuestion];
+            document.getElementById('questionNumber').textContent = `Pregunta ${currentQuestion + 1} de 8`;
+            document.getElementById('questionText').textContent = question.question;
+            
+            const optionsContainer = document.getElementById('optionsContainer');
+            optionsContainer.innerHTML = '';
+            
+            question.options.forEach((option, index) => {
+                const div = document.createElement('div');
+                div.className = 'option';
+                div.textContent = option;
+                div.onclick = () => selectOption(index);
+                div.id = `option-${index}`;
+                optionsContainer.appendChild(div);
+            });
+
+            document.getElementById('feedback').className = 'feedback';
+            document.getElementById('feedback').innerHTML = '';
+            document.getElementById('nextBtn').disabled = true;
+
+            updateProgress();
+        }
+
+        function selectOption(index) {
+            if (answered[currentQuestion] !== undefined) return;
+
+            const question = questions[currentQuestion];
+            const options = document.querySelectorAll('.option');
+            options.forEach(opt => opt.classList.add('disabled'));
+
+            selectedAnswers[currentQuestion] = index;
+            const isCorrect = index === question.correct;
+
+            if (isCorrect) {
+                score++;
+                document.getElementById(`option-${index}`).classList.add('correct');
+                answered[currentQuestion] = true;
+            } else {
+                document.getElementById(`option-${index}`).classList.add('incorrect');
+                document.getElementById(`option-${question.correct}`).classList.add('correct');
+                answered[currentQuestion] = false;
+            }
+
+            showFeedback(isCorrect, question.explanation);
+            document.getElementById('nextBtn').disabled = false;
+        }
+
+        function showFeedback(isCorrect, explanation) {
+            const feedback = document.getElementById('feedback');
+            feedback.className = `feedback show ${isCorrect ? 'correct' : 'incorrect'}`;
+            feedback.innerHTML = `
+                <div class="feedback-title">${isCorrect ? '✅ ¡Correcto!' : '❌ Incorrecto'}</div>
+                <div class="feedback-explanation"><strong>Explicación:</strong> ${explanation}</div>
+            `;
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quizContainer').classList.remove('active');
+            document.getElementById('resultsContainer').classList.add('active');
+
+            const percentage = Math.round((score / 8) * 100);
+            document.getElementById('scoreDisplay').textContent = `${score}/8`;
+            document.getElementById('scorePercentage').textContent = `${percentage}%`;
+            document.getElementById('correctCount').textContent = score;
+            document.getElementById('incorrectCount').textContent = 8 - score;
+
+            let message = '';
+            let messageClass = '';
+            if (percentage >= 90) {
+                message = '🌟 ¡Excelente! Dominas la hipertensión';
+                messageClass = 'excellent';
+            } else if (percentage >= 75) {
+                message = '👍 ¡Muy bien! Buena comprensión';
+                messageClass = 'good';
+            } else if (percentage >= 60) {
+                message = '📚 Aceptable, repasa el módulo';
+                messageClass = 'fair';
+            } else {
+                message = '⚠️ Necesitas estudiar más';
+                messageClass = 'poor';
+            }
+
+            const messageEl = document.getElementById('scoreMessage');
+            messageEl.textContent = message;
+            messageEl.className = `score-message ${messageClass}`;
+
+            showReview();
+        }
+
+        function showReview() {
+            let reviewHTML = '<h3 style="text-align: left; margin-top: 30px;">📋 Revisión de Respuestas</h3>';
+            questions.forEach((q, index) => {
+                const isCorrect = answered[index];
+                const userAnswer = q.options[selectedAnswers[index]];
+                const correctAnswer = q.options[q.correct];
+
+                reviewHTML += `
+                    <div class="review-item ${isCorrect ? 'correct' : 'incorrect'}">
+                        <div class="review-question">${index + 1}. ${q.question}</div>
+                        <div class="review-your-answer"><strong>Tu respuesta:</strong> ${userAnswer}</div>
+                        ${!isCorrect ? `<div class="review-correct-answer"><strong>Respuesta correcta:</strong> ${correctAnswer}</div>` : ''}
+                    </div>
+                `;
+            });
+
+            document.getElementById('reviewContainer').innerHTML = reviewHTML;
+        }
+
+        function updateProgress() {
+            const progress = ((currentQuestion + 1) / 8) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+            document.getElementById('progressText').textContent = `Pregunta ${currentQuestion + 1} de 8`;
+        }
+
+        document.getElementById('nextBtn').onclick = nextQuestion;
+
+        loadQuestion();
+    </script>
+</body>
+</html>
